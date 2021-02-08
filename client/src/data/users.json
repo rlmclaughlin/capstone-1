@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "username": "centauri",
+        "email": "centauri_43@yahoo.com",
+        "password": "12345",
+        "loggedIn": false
+    },
+    {
+        "id": 2,
+        "username": "music_fan",
+        "email": "music_fan@yahoo.com",
+        "password": "11111",
+        "loggedIn": false
+    },
+    {
+        "id": 3,
+        "username": "the_bill",
+        "email": "the_bill@yahoo.com",
+        "password": "121212",
+        "loggedIn": false
+    }
+]

@@ -6,8 +6,8 @@
         "manufacturer": "outlander",
         "category": "vinyl",
         "quantity": 2,
-        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg"
-        
+        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg",
+        "price": 24.95
     },
     {
         "id": 2,
@@ -16,8 +16,8 @@
         "manufacturer": "outlander",
         "category": "clothes",
         "quantity": 5,
-        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg"
-        
+        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg",
+        "price": 59.99
     },
     {
         "id": 3,
@@ -26,8 +26,8 @@
         "manufacturer": "outlander",
         "category": "merch",
         "quantity": 1,
-        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg"
-        
+        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg",
+        "price": 4.99
     },
     {
         "id": 4,
@@ -36,8 +36,8 @@
         "manufacturer": "outlander",
         "category": "DVD/BlueRay",
         "quantity": 7,
-        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg"
-        
+        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg",
+        "price": 19.99
     },
     {
         "id": 5,
@@ -46,8 +46,8 @@
         "manufacturer": "outlander",
         "category": "Posters",
         "quantity": 1,
-        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg"
-        
+        "product_image": "https://dy1njwx6v16vt.cloudfront.net/wp-content/uploads/sites/44/2019/05/The-Beatles-Let-It-Be.jpg",
+        "price": 9.99
     }
 ]
 

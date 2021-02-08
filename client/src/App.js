@@ -4,15 +4,15 @@ import InventoryCards from './components/inventory/inventoryCards'
 import './App.css';
 import {Route} from 'react-router-dom'
 
-const myData = require('./data/data.json')
-
 function App() {
-  console.log(myData)
+  const inventoryData = require('./data/inventory.json')
+  const usersData = require('./data/users.json')
+  console.log(usersData)
   return (
     <div className="App">
       <Nav/>
       <Route exact path='/' render={props => (
-        <InventoryCards {...props} />
+        <InventoryCards {...props} inventoryData={inventoryData}/>
       )}/>
     </div>
   );

@@ -1,10 +1,14 @@
 import React from 'react'
 import '../../styles/inventory/inventoryCard.css'
 
-function inventoryCard(){
+function inventoryCard(props){
     return(
         <div>
-            inventoryCard
+            <h2>{props.data.product_name}</h2>
+            <img src={props.data.product_image}/>            
+            <p>Qty: {props.data.quantity}</p>
+            <p>Price: {props.data.price}</p>
+
         </div>
     )
 }

@@ -3,11 +3,12 @@ import InventoryCard from './inventoryCard'
 import '../../styles/inventory/inventoryCards.css'
 
 
-function InventoryCards(){
+function InventoryCards(props){
     return(
         <div>
-            inventorycards
-            <InventoryCard/>
+            {props.inventoryData.map((item, index) => (
+               <InventoryCard data={item} key={index}/> 
+            ))}
         </div>
     )
 }
