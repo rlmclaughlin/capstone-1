@@ -1,0 +1,22 @@
+nav{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+nav section{
+    width: 20%; 
+}
+
+nav ul{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 40%; 
+}
+
+nav ul li{
+    margin-left: 15px;
+}
