@@ -29,6 +29,7 @@
 .inventory-cards-container h1{
     font-family: actionis;
     font-size: 56px;
+    text-shadow: 1px 3px 2px white;
     width: 100%;
     text-align: center;
 }

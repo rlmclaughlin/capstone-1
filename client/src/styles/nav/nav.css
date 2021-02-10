@@ -16,6 +16,7 @@ nav section{
 }
 nav section h2{
     font-family: actionis;
+    text-shadow: 1px 3px 2px white;
 }
 
 nav ul{

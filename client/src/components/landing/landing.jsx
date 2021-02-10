@@ -6,9 +6,7 @@ function Landing(props){
         
            <main>
                 <h1>-Vinyl Navigator-</h1>
-                <button>Enter The Enigma</button>
-           </main>
-        
+           </main> 
     )
 }
 

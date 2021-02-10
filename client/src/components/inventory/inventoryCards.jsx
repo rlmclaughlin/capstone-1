@@ -1,5 +1,6 @@
 import React from 'react'
 import InventoryCard from './inventoryCard'
+import InventoryAllCards from './inventoryAllCards'
 import '../../styles/inventory/inventoryCards.css'
 
 
@@ -49,6 +50,18 @@ function InventoryCards(props){
                 {props.inventory.map((item, index) => 
                     index < 9 && item.category == 'dvd' ? limitCards(<InventoryCard key={index} inventory={item}/>) : ''
                 )}
+            </section>
+            <section className='header header-2'>
+                <hr style={{width: '20%', marginRight: "15px"}}/>
+                <h2>Browse The Lollipop Shoppe</h2>
+                <hr style={{width:"20%", marginLeft: '15px'}}/>
+            </section>           
+            <section className='vinyl-cards'>
+                {
+                    props.inventory.map((item, index) => (
+                        <InventoryAllCards setCart={props.setCart} key={index} card={item} />
+                    ))
+                }
             </section>
         </section>
     )

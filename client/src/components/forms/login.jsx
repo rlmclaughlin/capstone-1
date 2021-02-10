@@ -24,10 +24,6 @@ function Login(props){
             }
         ]))
         console.log(localStorage.getItem('username'))
-
-        if(localStorage.getItem('username') === user.username && localStorage.getItem('password') === user.password){
-            console.log('cat')
-        } 
     }
     
     return(

@@ -6,10 +6,11 @@ import Login from './components/forms/login'
 import Register from './components/forms/register'
 import Landing from './components/landing/landing'
 import VinylCards from './components/vinyl/vinylCards'
+import DvdCards from './components/dvds/dvdCards'
+import ShoppingCart from './components/shoppingCart/shoppingCart'
+import {Route} from 'react-router-dom'
 
 import './App.css';
-import {Route} from 'react-router-dom'
-import axios from 'axios'
 
 const userData = require('./data/userData.json')
 const inventoryData = require('./data/inventoryData.json')
@@ -17,9 +18,8 @@ const inventoryData = require('./data/inventoryData.json')
 function App() {
     const [users, setUsers] = useState(userData)
     const [inventory, setInventory] = useState(inventoryData)
-
-    console.log(users)
-    
+    const [cart, setCart] = useState([])
+    console.log(cart)
   return (
     <div className="App">
       <Nav/>
@@ -29,10 +29,17 @@ function App() {
       )}/>
 
       <Route path='/inventory' render={props => (
-        <InventoryCards {...props} inventory={inventory}/>
+        <InventoryCards {...props} setCart={setCart} inventory={inventory}/>
       )}/>
             <Route path='/vinyl' render={props => (
-        <VinylCards {...props} inventory={inventory}/>
+        <VinylCards {...props} setCart={setCart} inventory={inventory}/>
+      )}/>
+
+      <Route path='/dvd' render={props => (
+          <DvdCards {...props} setCart={setCart} inventory={inventory}/>
+      )}/>
+      <Route path='/cart' render={props => (
+          <ShoppingCart {...props}  inventory={inventory}/>
       )}/>
 
       <Route path='/login' render={props => (
@@ -41,6 +48,7 @@ function App() {
       <Route path='/register' render={props => (
         <Register {...props}  setUsers={setUsers} users={users}/>
       )}/>
+
     </div>
   );
 }
