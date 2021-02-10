@@ -1,3 +1,8 @@
+    @font-face{
+        font-family: actionis; 
+        src: url('../landing/actionis.ttf')
+    }
+
 nav{
     display: flex; 
     flex-wrap: wrap;
@@ -8,6 +13,9 @@ nav{
 
 nav section{
     width: 20%; 
+}
+nav section h2{
+    font-family: actionis;
 }
 
 nav ul{

@@ -3,13 +3,11 @@ import '../../styles/inventory/inventoryCard.css'
 
 function inventoryCard(props){
     return(
-        <div>
-            <h2>{props.data.product_name}</h2>
-            <img src={props.data.product_image}/>            
-            <p>Qty: {props.data.quantity}</p>
-            <p>Price: {props.data.price}</p>
-
-        </div>
+        <section className='inventory-card-container'>
+            <div className='inventory-card-image' style={{backgroundImage: `url(${props.inventory.product_image})`}}>
+                 <h4>${props.inventory.price} </h4>  
+            </div>  
+        </section>
     )
 }
 

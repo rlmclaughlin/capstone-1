@@ -1,14 +1,37 @@
 import React, {useState} from 'react'
 
-function Login(){
+function Login(props){
     const [user, setUser] = useState({username: '', email: '', password: ''})
+   
+    const changeHandler = (e) => {
+        e.preventDefault()
+        setUser(items => ({
+            ...items, 
+                [e.target.name]: e.target.value
+            }
+        ))
+    }
 
-    const changeHandler = () => {
+    const submitHandler = (e) => {
+        e.preventDefault()
+        props.setUsers((items) => ([
+            ...items, {
+                id: props.users.length + 1,
+                username: user.username,
+                email: user.email,
+                password: user.password,
+                loggedIn: false
+            }
+        ]))
+        console.log(localStorage.getItem('username'))
 
+        if(localStorage.getItem('username') === user.username && localStorage.getItem('password') === user.password){
+            console.log('cat')
+        } 
     }
     
     return(
-        <form>
+        <form onSubmit={submitHandler}>
             <input name='username' 
                    type='text'
                    placeholder='username'
@@ -24,6 +47,7 @@ function Login(){
                    placeholder='password'
                    value={user.password}
                    onChange={changeHandler}/>
+            <button type='submit'>Submit</button>
         </form>
     )
 }

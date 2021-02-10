@@ -1,0 +1,62 @@
+.inventory-card-container{
+    width: 20%; 
+    max-width: 190px;
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: column; 
+    margin: 0px auto 20px auto;
+    box-shadow: -1px 4px 25px;
+    padding: 3px;
+    border: 2px solid #00000087;
+}
+
+.inventory-card-container .inventory-card-image{
+    width: 100%;
+    height: 190px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.inventory-card-container .inventory-card-image h4{
+    margin: 0px 0px 1px 0px;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8))
+
+}
+
+.product-info{
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.product-info h5:first-child{
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.inventory-card-container h5{
+    font-weight: 400; 
+    margin: 6px 0px 0px 0px;
+}
+
+.product-info p{
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 7px;
+    padding: 2px 5px;
+    font-size: 11px;
+    color:white;
+    background: rgb(98, 98, 252);
+    border-radius: 15px;
+}

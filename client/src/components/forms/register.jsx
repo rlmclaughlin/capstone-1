@@ -1,14 +1,35 @@
 import React, {useState} from 'react'
 
-function Register(){
+function Register(props){
     const [user, setUser] = useState({username: '', email: '', password: ''})
 
-    const changeHandler = () => {
-
+    const changeHandler = (e) => {
+        e.preventDefault()
+        setUser(items => ({
+            ...items, 
+                [e.target.name]: e.target.value
+            }
+        ))
     }
-    
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        props.setUsers((items) => ([
+            ...items, {
+                id: props.users.length + 1,
+                username: user.username,
+                email: user.email,
+                password: user.password,
+                loggedIn: false
+            }
+        ]))
+        localStorage.setItem('username', `${user.username}`)
+        localStorage.setItem('password', `${user.password}`)
+        localStorage.setItem('loggedIn', false)
+    }
+
     return(
-        <form>
+        <form onSubmit={submitHandler}>
             <input name='username' 
                    type='text'
                    placeholder='username'
@@ -24,6 +45,7 @@ function Register(){
                    placeholder='password'
                    value={user.password}
                    onChange={changeHandler}/>
+            <button type='submit'>Submit</button>
         </form>
     )
 }

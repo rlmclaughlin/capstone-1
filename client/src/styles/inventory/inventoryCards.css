@@ -1,0 +1,105 @@
+@font-face{
+    font-family: actionis; 
+    src: url('../landing/actionis.ttf')
+}
+
+.inventory-cards-container{
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;  
+}
+
+.header-background{
+    background: url('../landing/psych1.jpg');
+    background-position: center; 
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    margin: 20px 0px; 
+}
+
+.inventory-cards-container h1{
+    font-family: actionis;
+    font-size: 56px;
+    width: 100%;
+    text-align: center;
+}
+
+.header h1{
+    width: auto;
+}
+
+.inventory-cards-container .banner-menu{
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly
+}
+
+.banner-menu div{
+    width: 30%;
+    max-width: 300px;
+    max-height: 200px;
+    height: 200px;
+}
+
+.card{
+    position: relative;
+    background-size: cover; 
+    background-position: center;
+}
+
+.card1{
+    background-image: url('./psych6.jpg');
+
+}
+
+.card2{
+    background-image: url('./psych2.jpg');
+    position: relative;
+}
+
+.card3{
+    background-image: url('./psych3.jpg');
+    position: relative;
+}
+
+.banner-menu div h3{
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: center;
+    color: white;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.507);
+    height: 100%;
+    width: 100%;
+    bottom:0; 
+    margin:0;
+}
+
+.header-2{
+    margin: 10px 0px;
+    font-family: actionis;
+    font-size: 24px;
+}
+
+#inventory-cards{
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+
+
