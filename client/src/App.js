@@ -32,14 +32,14 @@ function App() {
         <InventoryCards {...props} setCart={setCart} inventory={inventory}/>
       )}/>
             <Route path='/vinyl' render={props => (
-        <VinylCards {...props} setCart={setCart} inventory={inventory}/>
+        <VinylCards {...props} setCart={setCart} cart={cart} inventory={inventory}/>
       )}/>
 
       <Route path='/dvd' render={props => (
           <DvdCards {...props} setCart={setCart} inventory={inventory}/>
       )}/>
       <Route path='/cart' render={props => (
-          <ShoppingCart {...props}  inventory={inventory}/>
+          <ShoppingCart {...props}  cart={cart} setCart={setCart} inventory={inventory}/>
       )}/>
 
       <Route path='/login' render={props => (

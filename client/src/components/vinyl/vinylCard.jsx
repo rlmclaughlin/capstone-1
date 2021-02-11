@@ -3,16 +3,23 @@ import '../../styles/vinyl/vinylCard.css'
 
 function VinylCard(props){
     
-    const cartAddHandler = () => {
-        props.setCart(items => ([
-             ...items, {
-                id: props.vinyl.id,
-                product_name: props.vinyl.product_name,
-                description: props.vinyl.product_description,
-                price: props.vinyl.price
-               }
-             ]))     
+    const cartAddHandler = () => { 
+        let doesExist = false
+        props.cart.map( item => (
+            item.id === props.vinyl.id ? doesExist = true : doesExist = false 
+        ))  
+        doesExist ? console.log("already Exist") : 
+            props.setCart(items => ([
+                ...items, {
+                   id: props.vinyl.id,
+                   product_name: props.vinyl.product_name,
+                   description: props.vinyl.product_description,
+                   price: props.vinyl.price
+                }
+            ]))  
+            console.log(props.cart)
     }
+
 
     return(
         <section className='vinyl-card-container'>

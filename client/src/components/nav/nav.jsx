@@ -14,7 +14,7 @@ function Nav(){
                 <NavLink to='/vinyl'><li>Vinyl</li></NavLink>
                 <NavLink to='dvd'><li>DVD/BluRay</li></NavLink>
                 <li>login</li>
-                <li>Shopping Cart</li>
+                <NavLink to='/cart'><li>Shopping Cart</li></NavLink>
             </ul>
         </nav>
     )
