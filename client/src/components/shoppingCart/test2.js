@@ -3,21 +3,12 @@ import '../../styles/shoppingCart/shoppingCart.css'
 import ShoppingCartInfo from './shoppingCartInfo'
 
 function ShoppingCart(props){
-    const [total, setTotal] = useState()
 
-    useEffect(() => {
-        let myTotal = 0 
-        props.cart.map(item => 
-            myTotal += item.price
-        )
-       setTotal(myTotal)
-    }, [])
+    const [total, setTotal] = useState(0)
 
-    if(!props.cart.length && !total){
+    if(!props.cart.length){
         return <div className='empty-cart'>Your Cart Is Empty</div>}
-    if(!total){
-        return "..loading"
-    }
+
 
     return(
         <section className='shopping-cart-container'>     
@@ -28,15 +19,14 @@ function ShoppingCart(props){
             </section>  
             {
                 props.cart.map((item, index) => (
-                    <ShoppingCartInfo item={item} key={index} total={total} setTotal={setTotal} setCart={props.setCart} cart={props.cart}/> 
+                    <ShoppingCartInfo setTotal={setTotal} total={total} item={item} cart={props.cart} setCart={props.setCart}/>
                 ))
             }
             <section className='total'>
-                {!total ? "loading ..." : <h2>Total: ${total.toFixed(2)}</h2>}
+                <h2>Total: ${total}</h2>     
             </section>
         </section>
     )
 }
 
 export default ShoppingCart
-

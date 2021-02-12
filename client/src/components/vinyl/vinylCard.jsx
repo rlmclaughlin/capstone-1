@@ -1,20 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../../styles/vinyl/vinylCard.css'
 
 function VinylCard(props){
+    const [inCart, setInCart] = useState(false)
     
     const cartAddHandler = () => { 
-        let doesExist = false
-        props.cart.map( item => (
-            item.id === props.vinyl.id ? doesExist = true : doesExist = false 
-        ))  
-        doesExist ? console.log("already Exist") : 
+        setInCart(!inCart)
             props.setCart(items => ([
                 ...items, {
                    id: props.vinyl.id,
                    product_name: props.vinyl.product_name,
                    description: props.vinyl.product_description,
-                   price: props.vinyl.price
+                   price: props.vinyl.price,
+                   image: props.vinyl.product_image,
+                   category: props.vinyl.category,
+                   serialNumber: props.vinyl.serial_number,
+                   qty: props.vinyl.quantity,
+                   quantity: 1
                 }
             ]))  
             console.log(props.cart)
@@ -29,7 +31,7 @@ function VinylCard(props){
                 <p className='manufacturer'>{props.vinyl.product_description} </p> 
                 <div> 
                     <h4>Price: ${props.vinyl.price}</h4> 
-                    <p onClick={() => {cartAddHandler()}}>+</p>
+                    <p className={inCart === true ? 'isTrue' : 'isFalse'} onClick={() => {cartAddHandler()}}>+</p>
                 </div>                      
             </div>
         </section>

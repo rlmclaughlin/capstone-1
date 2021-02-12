@@ -59,7 +59,10 @@ function InventoryCards(props){
             <section className='vinyl-cards'>
                 {
                     props.inventory.map((item, index) => (
-                        <InventoryAllCards setCart={props.setCart} key={index} card={item} />
+                        <InventoryAllCards setCart={props.setCart} 
+                                           key={index} 
+                                           cartAddHandler={props.cartAddHandler} 
+                                           card={item} />
                     ))
                 }
             </section>

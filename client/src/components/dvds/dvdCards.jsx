@@ -16,7 +16,7 @@ function DvdCards(props){
             <section className='vinyl-cards'>
                 {
                     albumList.map((item, index) => (
-                        <DvdCard setCart={props.setCart} key={index} dvd={item} />
+                        <DvdCard setCart={props.setCart} key={index} dvd={item} cartAddHandler={props.cartAddHandler}/>
                     ))
                 }
             </section>

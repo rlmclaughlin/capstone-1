@@ -1,20 +1,21 @@
 .vinyl-card-container{
-    width: 25%; 
-    max-width: 220px;
     display: flex; 
     flex-wrap: wrap; 
     flex-direction: column; 
     margin: 0px auto 20px auto;
-    padding: 3px;
+    max-width: 200px;
+    padding: 10px 20px;
     overflow: hidden; 
     text-overflow: ellipsis; 
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .vinyl-card-container img{
     width: 100%;
     height: auto;
     box-shadow: 1px 3px 5px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .vinyl-card-container .vinyl-info{
@@ -33,4 +34,12 @@
 
 .vinyl-card-container .vinyl-info h4{
     font-size: 14px; 
+}
+
+.isTrue{
+    display: none; 
+}
+
+.isFalse{
+    display: flex;
 }

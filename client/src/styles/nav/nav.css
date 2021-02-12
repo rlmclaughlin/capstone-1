@@ -22,8 +22,7 @@ nav section h2{
 nav ul{
     display: flex; 
     flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 40%; 
+    justify-content: flex-end; 
 }
 
 nav ul li{

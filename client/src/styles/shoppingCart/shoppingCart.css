@@ -1,0 +1,114 @@
+@font-face{
+    font-family: actionis; 
+    src: url('../landing/actionis.ttf')
+}
+
+.shopping-cart-container{
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.shopping-cart-container .cart-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;  
+}
+
+.cart-header-background{
+    background: url('../landing/psych1.jpg');
+    background-position: center; 
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    margin: 20px 0px; 
+}
+
+.shopping-cart-container .cart-header h1{
+    font-family: actionis;
+    font-size: 56px;
+    text-shadow: 1px 3px 2px white;
+    width: auto;
+    text-align: center;
+}
+
+.shopping-cart-card{
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap; 
+    max-height: 150px;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.342);
+    margin-bottom: 15px;
+}
+
+.cart-left-container{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+img{
+    height: auto; 
+    width: 100%;
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.shopping-cart-card section{
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: column; 
+    justify-content: space-between;
+    max-height: 150px;
+    padding-left: 25px;
+}
+
+.shopping-cart-card section p{
+    margin: 0px 0px 0px 0px;
+    font-size: 12px;
+}
+
+.shopping-cart-card section h4{
+    margin: 0; 
+}
+
+.shopping-cart-card input{
+    width: 30px;
+    padding: 4px 0px;
+}
+
+.button-qty-section{
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+form{
+    padding-left: 25px;
+}
+
+.price{
+    margin-bottom: 0px;
+}
+
+.total{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-end; 
+    padding-right: 10px;
+    width: 100%;
+}
+
+.empty-cart{
+    height: 70vh; 
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+}

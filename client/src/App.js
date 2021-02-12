@@ -19,7 +19,26 @@ function App() {
     const [users, setUsers] = useState(userData)
     const [inventory, setInventory] = useState(inventoryData)
     const [cart, setCart] = useState([])
+
+
+    const cartAddHandler = (cardID, name, product_description, price, image) => { 
+        let doesExist = false
+        cart.map( item => (
+            item.id === cardID ? doesExist = true : doesExist = false 
+        ))  
+        doesExist ? console.log("already Exist") : 
+            setCart(items => ([
+                ...items, {
+                    id: cardID,
+                    product_name: name,
+                    description: product_description,
+                    price: price,
+                    image: image
+                }
+            ]))  
+    }  
     console.log(cart)
+
   return (
     <div className="App">
       <Nav/>
@@ -29,14 +48,14 @@ function App() {
       )}/>
 
       <Route path='/inventory' render={props => (
-        <InventoryCards {...props} setCart={setCart} inventory={inventory}/>
+        <InventoryCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
       )}/>
             <Route path='/vinyl' render={props => (
         <VinylCards {...props} setCart={setCart} cart={cart} inventory={inventory}/>
       )}/>
 
       <Route path='/dvd' render={props => (
-          <DvdCards {...props} setCart={setCart} inventory={inventory}/>
+          <DvdCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
       )}/>
       <Route path='/cart' render={props => (
           <ShoppingCart {...props}  cart={cart} setCart={setCart} inventory={inventory}/>

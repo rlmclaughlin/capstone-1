@@ -1,4 +1,4 @@
-import React from 'react' 
+import React, {useState} from 'react' 
 import '../../styles/vinyl/vinylCard.css'
 import '../../styles/dvd/dvdCard.css'
 
@@ -6,15 +6,11 @@ import '../../styles/dvd/dvdCard.css'
 
 function DvdCard(props){
 
-    const cartAddHandler = () => {
-        props.setCart(items => ([
-             ...items, {
-                id: props.dvd.id,
-                product_name: props.dvd.product_name,
-                description: props.dvd.product_description,
-                price: props.dvd.price
-               }
-             ]))     
+    const [inCart, setInCart] = useState(false)
+
+    const cartHandler = () => {
+        setInCart(!inCart)
+        props.cartAddHandler(props.dvd.id, props.dvd.product_name, props.dvd.product_description, props.dvd.price, props.dvd.product_image)
     }
 
     return(
@@ -25,7 +21,7 @@ function DvdCard(props){
                 <p className='manufacturer'>{props.dvd.product_description} </p> 
                 <div> 
                     <h4>Price: ${props.dvd.price} </h4> 
-                    <p onClick={() => {cartAddHandler()}}>+</p>
+                    <p className={inCart === true ? 'isTrue' : 'isFalse'} onClick={() => {cartHandler()}}>+</p>
                 </div>
             </div>
         </section>
