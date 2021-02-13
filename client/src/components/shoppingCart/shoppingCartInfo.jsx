@@ -23,7 +23,7 @@ function ShoppingCartInfo(props){
     const decrementPrice = (e, item) => { 
         e.preventDefault()
         setQty(prev => prev - 1)
-        if(props.item.quantity <= 0){
+        if(props.item.quantity === 0){
             setQty(0)
             props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: qty } : x))
         } else {
