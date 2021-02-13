@@ -50,12 +50,15 @@ function ShoppingCartInfo(props){
                 </div>
                 <div className='button-qty-section'>
                     <button onClick={() => removeHandler(props.item.id)}>remove item</button> 
-                    <form>
-                       <label for='qty'>Qty: </label>
-                       <input type='number' name='qty'  onChange={changeHandler} min={1} max={props.item.qty} value={qty}/>    
-                        <button onClick={(e) => {incrementPrice(e, props.item.price)}}>up</button>
-                        <button onClick={(e) => {decrementPrice(e, props.item.price)}}>down</button>
-                    
+                    <form className='cart-form-container'>
+                        <label for='qty'>Qty: </label>
+                        <input type='number' name='qty'  onChange={changeHandler} min={1} max={props.item.qty} value={qty} readOnly/>    
+                        <div className='button-container'>
+                        <p onClick={(e) => {incrementPrice(e, props.item.price)}}></p>
+                        <p onClick={(e) => {decrementPrice(e, props.item.price)}}></p>
+                        </div>
+
+                    {props.item.qty <= qty ? <p style={{color: 'red', marginLeft: '6px', display: 'flex', alignItems: 'center' }}>Maximum Qty Available</p> : ' '}
                     </form>                              
                 </div>
             </section>

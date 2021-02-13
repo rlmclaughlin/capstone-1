@@ -80,6 +80,7 @@ img{
 .shopping-cart-card input{
     width: 30px;
     padding: 4px 0px;
+    text-align: center;
 }
 
 .button-qty-section{
@@ -99,8 +100,22 @@ form{
     display: flex; 
     flex-wrap: wrap; 
     justify-content: flex-end; 
+    flex-direction: column;
+    align-items: flex-end;
     padding-right: 10px;
     width: 100%;
+    padding-bottom: 15px;
+}
+
+.total button{
+    background: rgba(0, 196, 0, 0.781); 
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 5px; 
+    box-shadow: 1px 3px 15px black;
+    width: 16%;
+    min-width: 140px;
 }
 
 .empty-cart{
@@ -112,3 +127,33 @@ form{
     align-items: center;
     font-size: 36px;
 }
+
+.cart-form-container{
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.button-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: column; 
+    justify-content: space-around;
+    margin-left: 2px;
+}
+
+.button-container p:first-child{
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(0, 0, 0);
+}
+
+.button-container p:last-child{
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgb(0, 0, 0);
+}
+

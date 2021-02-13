@@ -33,6 +33,7 @@ function ShoppingCart(props){
             }
             <section className='total'>
                 {!total ? "loading ..." : <h2>Total: ${total.toFixed(2)}</h2>}
+                <button>Submit Order</button>
             </section>
         </section>
     )
