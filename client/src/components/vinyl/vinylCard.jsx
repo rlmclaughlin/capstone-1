@@ -31,7 +31,9 @@ function VinylCard(props){
                 <p className='manufacturer'>{props.vinyl.product_description} </p> 
                 <div className='vinyl-price-button'> 
                     <h4>Price: ${props.vinyl.price}</h4> 
-                    <p className={inCart === true ? 'isTrue' : 'isFalse'} onClick={() => {cartAddHandler()}}>+</p>
+                    <p className={inCart === true ? 'isTrue' : 'isFalse'} onClick={() => {cartAddHandler()}}>        
+                      <i class="fas fa-shopping-cart cart-icon"></i>
+                    </p>
                 </div>                      
             </div>
         </section>

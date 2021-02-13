@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react'
 import Nav from './components/nav/nav'
 import InventoryCards from './components/inventory/inventoryCards'
@@ -45,8 +44,6 @@ function App() {
   return (
       <div className="App">
           <Nav inventory={inventory} setMatch={setMatch} match={match}/>
-         
-
     
           <Route exact path='/' render={props => (
             <Landing {...props} />

@@ -42,7 +42,6 @@
 }
 
 .isFalse {
-    background: rgba(0, 196, 0, 0.781); 
     border: none;
     color: white;
     padding: 5px 7px;
@@ -55,5 +54,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
+}
+
+.fas{
+    margin-right: 0px; 
+    margin-left: 0px; 
 }
 

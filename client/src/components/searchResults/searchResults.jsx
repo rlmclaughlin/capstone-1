@@ -6,7 +6,7 @@ function SearchResults(props){
     if(props.length === 0){return "your results are comming..."}
     console.log(props.match)
     return(
-        <section className='shopping-cart-container' style={{ maxWidth: '1200px', justifyContent: 'center'}}>     
+        <section className='shopping-cart-container' style={{ maxWidth: '1300px', justifyContent: 'center'}}>     
             <section className='cart-header cart-header-background' >
                 <hr style={{width: '10%', marginRight: "15px"}}/>
                 <h1 className='shop'>Lollipop Shoppe Search</h1>

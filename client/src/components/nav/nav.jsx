@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom'
 import '../../styles/nav/nav.css'
 
 
-//<NavLink to='inventory'><li>What's New</li></NavLink>
 //<NavLink to='/vinyl'><li>Vinyl</li></NavLink>
 //<NavLink to='dvd'><li>DVD/BluRay</li></NavLink>
 

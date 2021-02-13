@@ -1,7 +1,7 @@
-    @font-face{
-        font-family: actionis; 
-        src: url('../landing/actionis.ttf')
-    }
+@font-face{
+    font-family: actionis; 
+    src: url('../landing/actionis.ttf')
+}
 
 nav{
     display: flex; 
