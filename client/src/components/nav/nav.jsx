@@ -27,27 +27,29 @@ function Nav(props){
                 <i class="fas fa-record-vinyl vinyl-icon"></i>
                 <h2>Vinyl Navigator</h2>
             </section>
-
-            <ul>                
-
-            <li>
-
-            <div className='search-container'>
-                <form onSubmit={searchHandler} autocomplete="off">
-                   <NavLink to='searchResults'><input type='text' name='searchBar' value={search} onChange={(e) => {setSearch(e.target.value)}}/></NavLink> 
-                   <button type='submit'><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-
-            </li>
-                <NavLink to='/cart'>
+            <ul className='navbar-items'>                
+                <li>
+                    <div className='search-container'>
+                        <form onSubmit={searchHandler} autocomplete="off">
+                            <NavLink to='searchResults'>
+                                <input type='text' 
+                                       name='searchBar'
+                                       placeholder='Explore Our Database' 
+                                       value={search} 
+                                       onChange={(e) => {setSearch(e.target.value)}}/>
+                            </NavLink> 
+                            <button type='submit'><i class="fas fa-search search-icon"></i></button>
+                        </form>
+                    </div>
+                </li>
+                <NavLink to='/inventory' style={{textDecoration: "none"}}><li>Shop</li></NavLink>
+                <NavLink to='/vinyl' style={{textDecoration: "none"}}><li>Vinyl</li></NavLink>
+                <NavLink to='/cart' style={{textDecoration: "none"}}>
                     <li>
-                        <i class="fas fa-shopping-cart cart-icon"></i>
+                        <i style={{marginLeft: '5px'}} class="fas fa-shopping-cart cart-icon"></i>
                     </li>      
                 </NavLink>
-            </ul>
-
-            
+            </ul>   
         </nav>
         
     )

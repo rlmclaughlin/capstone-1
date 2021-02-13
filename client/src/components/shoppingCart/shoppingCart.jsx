@@ -8,7 +8,7 @@ function ShoppingCart(props){
     useEffect(() => {
         let myTotal = 0 
         props.cart.map(item => 
-            myTotal += item.price
+           item.quantity === 0 ? myTotal += 0 : myTotal += item.price
         )
        setTotal(myTotal)
     }, [])
@@ -18,7 +18,8 @@ function ShoppingCart(props){
     if(!total){
         return "..loading"
     }
-
+    
+    
     return(
         <section className='shopping-cart-container'>     
             <section className='cart-header cart-header-background'>
@@ -40,4 +41,11 @@ function ShoppingCart(props){
 }
 
 export default ShoppingCart
+
+
+
+
+
+
+
 

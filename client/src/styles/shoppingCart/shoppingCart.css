@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     align-items: center;
     width: 100%;  
+    margin-top: 0px;
 }
 
 .cart-header-background{
@@ -41,7 +42,6 @@
     flex-wrap: wrap; 
     max-height: 150px;
     justify-content: space-between;
-    align-items: flex-end;
     padding: 15px;
     border: 1px solid rgba(128, 128, 128, 0.342);
     margin-bottom: 15px;
@@ -138,7 +138,7 @@ form{
     flex-wrap: wrap; 
     flex-direction: column; 
     justify-content: space-around;
-    margin-left: 2px;
+    margin-left: 5px;
 }
 
 .button-container p:first-child{
@@ -157,3 +157,6 @@ form{
     border-top: 10px solid rgb(0, 0, 0);
 }
 
+.cart-form-container label{
+    margin-right: 5px;
+}

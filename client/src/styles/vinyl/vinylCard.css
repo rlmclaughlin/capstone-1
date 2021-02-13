@@ -19,7 +19,7 @@
 }
 
 .vinyl-card-container .vinyl-info{
-    line-height: .4;
+    line-height: .5;
 }
 
 .vinyl-card-container .vinyl-info .band-info{
@@ -35,6 +35,8 @@
 
 .vinyl-card-container .vinyl-info h4 {
     font-size: 14px; 
+    text-decoration: underline;
+    margin-top: 15px;
 }
 
 .isTrue {
@@ -47,6 +49,7 @@
     padding: 5px 7px;
     display: flex; 
     justify-content: center; 
+    margin-top: 10px;
 }
 
 .vinyl-price-button {

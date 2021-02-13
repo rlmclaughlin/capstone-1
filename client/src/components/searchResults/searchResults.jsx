@@ -9,7 +9,7 @@ function SearchResults(props){
         <section className='shopping-cart-container' style={{ maxWidth: '1300px', justifyContent: 'center'}}>     
             <section className='cart-header cart-header-background' >
                 <hr style={{width: '10%', marginRight: "15px"}}/>
-                <h1 className='shop'>Lollipop Shoppe Search</h1>
+                <h1 className='shop'>Vinyl Navigator Search</h1>
                 <hr style={{width:"10%", marginLeft: '15px'}}/>
             </section>  
             {props.match.length === 0 ? <h1>Enter Your Search Query</h1>: 
@@ -33,7 +33,10 @@ function SearchResults(props){
                             </div>
                         </section>
                     </div>
-                    <h3 className='price'>Price: ${item.price}</h3>                                             
+                    <div style={{display: "flex", flexDirection: 'column', justifyContent:"space-between", alignItems: "flex-end"}}>
+                        <i class="fas fa-record-vinyl vinyl-icon"></i>
+                        <h3 className='price'>Price: ${item.price}</h3>                                             
+                    </div>
                 </div>     
                ))}
             </div>}

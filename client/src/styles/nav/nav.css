@@ -20,6 +20,7 @@ nav section h2{
     font-family: actionis;
     text-shadow: 1px 3px 2px white;
     font-size: 35px;
+    margin-left: 4px;
 }
 
 .search-container{
@@ -51,17 +52,18 @@ nav section h2{
     bottom: 0px;
     border-radius:10px;
     border:none; 
+    outline: none;
 }
 
 nav ul{
     display: flex; 
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .vinyl-icon{
     font-size: 35px;
-    margin-right: 2px;
+    margin-right: 3px;
 }
 
 .cart-icon{
@@ -69,3 +71,27 @@ nav ul{
     color: black;
     margin-left: 5px;
 }
+
+.navbar-items li .cart-icon{
+    margin-bottom:1px;
+}
+
+.search-icon{
+    font-size: 15px;
+}
+
+.navbar-items li{
+    margin-left: 2rem;
+    display: flex;
+    color: black;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+Link{
+    text-decoration: no 
+}
+
+
+
+
