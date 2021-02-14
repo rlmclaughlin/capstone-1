@@ -16,7 +16,7 @@ function ShoppingCart(props){
     if(!props.cart.length && !total){
         return <div className='empty-cart'>Your Cart Is Empty</div>}
     if(!total){
-        return "..loading"
+        return <div className='empty-cart'>Your Cart Is Empty</div>
     }
     
     
