@@ -9,6 +9,7 @@ import DvdCards from './components/dvds/dvdCards'
 import ShoppingCart from './components/shoppingCart/shoppingCart'
 import SearchResults from './components/searchResults/searchResults'
 import {Route} from 'react-router-dom'
+import ViewCard from './components/viewCard/viewCard'
 
 import './App.css';
 
@@ -65,6 +66,9 @@ function App() {
           )}/>
           <Route path='/cart' render={props => (
               <ShoppingCart {...props}  cart={cart} setCart={setCart} inventory={inventory}/>
+          )}/>
+          <Route path='/viewCard/:id' render={props => (
+              <ViewCard {...props} inventory={inventory} cart={cart} setCart={setCart}/> 
           )}/>
     
           <Route path='/login' render={props => (
