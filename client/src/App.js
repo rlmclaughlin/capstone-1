@@ -52,7 +52,7 @@ function App() {
             <Landing {...props} />
           )}/>
 
-          <Route exact path='/searchResults' render={props => (
+          <Route path='/searchResults' render={props => (
             <SearchResults {...props} match={match} setMatch={setMatch}/>
           )}/>
           
@@ -77,6 +77,7 @@ function App() {
           <Route path='/viewCard/:id' render={props => (
               <ViewCard {...props} inventory={inventory} cart={cart} setCart={setCart}/> 
           )}/>
+          
           <Route path='/login' render={props => (
             <Login {...props}  setUsers={setUsers} setLoggedIn={setLoggedIn} loggedIn={loggedIn} users={users}/>
           )}/>

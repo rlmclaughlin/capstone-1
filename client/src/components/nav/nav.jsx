@@ -31,7 +31,7 @@ function Nav(props){
                 <li>
                     <div className='search-container'>
                         <form onSubmit={searchHandler} autocomplete="off">
-                            <NavLink to='searchResults'>
+                            <NavLink to='/searchResults'>
                                 <input type='text' 
                                        name='searchBar'
                                        placeholder='Explore Our Database' 

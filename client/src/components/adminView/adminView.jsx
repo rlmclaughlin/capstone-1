@@ -7,7 +7,7 @@ function AdminView(props){
         <section className='inventory-cards-container'>
             <section className='header header-background'>
                 <hr style={{width: '10%', marginRight: "15px"}}/>
-                <h1>Lollipop Shoppe Vinyl</h1>
+                <h1>Administrator View</h1>
                 <hr style={{width:"10%", marginLeft: '15px'}}/>
             </section>
             {

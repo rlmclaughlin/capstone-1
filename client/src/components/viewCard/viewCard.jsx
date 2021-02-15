@@ -22,7 +22,7 @@ function ViewCard(props){
         ]))
     }
     
-    
+    console.log(vinyl.product_image)
     return(
 
         <section className='inventory-cards-container'>
