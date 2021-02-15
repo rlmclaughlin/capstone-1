@@ -41,16 +41,7 @@ function InventoryCards(props){
                    item.category == 'vinyl' && count < 5 ? limitCards(<InventoryCard key={index} inventory={item}/>) : ''
                 )}
             </section>
-            <section className='header header-2'>
-                <hr className='horizontal-rule-1'/>
-                <h2>Suggested Feature Films</h2>
-                <hr className='horizontal-rule-2'/>
-            </section>
-            <section id='inventory-cards'>
-                {props.inventory.map((item, index) => 
-                    index < 9 && item.category == 'dvd' ? limitCards(<InventoryCard key={index} inventory={item}/>) : ''
-                )}
-            </section>
+
             <section className='header header-2'>
                 <hr className='horizontal-rule-1'/>
                 <h2>Browse Our Collection</h2>
@@ -59,11 +50,13 @@ function InventoryCards(props){
             <section className='vinyl-cards'>
                 {
                     props.inventory.map((item, index) => (
+
+                        index > 8 && index < 16 ?
                         <InventoryAllCards setCart={props.setCart} 
                                            key={index} 
                                            cartAddHandler={props.cartAddHandler} 
                                            card={item} />
-                    ))
+                   : '' )) 
                 }
             </section>
         </section>

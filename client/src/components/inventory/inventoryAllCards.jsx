@@ -7,7 +7,7 @@ function InventoryAllCards(props){
     
     return(
         <section className='vinyl-card-container'>
-            <Link to={`viewCard/${props.card.id}`}>
+            <Link style={{textDecoration: 'none', color: 'black'}} to={`viewCard/${props.card.id}`}>
                 <img src={props.card.product_image}/>
                 <div className='vinyl-info'>
                     <p className='band-info'>{props.card.product_name}</p>
