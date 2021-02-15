@@ -9,6 +9,16 @@
     text-overflow: ellipsis; 
     white-space: nowrap;
 }
+   
+    @media(max-width: 605px){
+        .vinyl-card-container{
+            max-width: 260px;
+            min-width: 260px;
+        }    
+    }
+
+
+
 
 .vinyl-card-container img{
     width: 100%;
@@ -16,6 +26,20 @@
     box-shadow: 1px 3px 5px black;
     max-width: 200px;
     max-height: 200px;
+}
+
+    @media(max-width: 605px){
+        .vinyl-card-container img{
+            max-width: 260px;
+            max-height: 260px; 
+        }    
+    }
+
+
+@media(max-width: 588px){
+    .header-2{
+        text-align: center;
+    }    
 }
 
 .vinyl-card-container .vinyl-info{

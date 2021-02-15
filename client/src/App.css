@@ -9,6 +9,12 @@ body{
   width: 90%;
 }
 
+@media(max-width: 425px){
+  body{
+      width: 98%; 
+  }
+}
+
 ul{
   list-style: none;
   padding: 0px;

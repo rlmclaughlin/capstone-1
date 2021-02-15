@@ -32,9 +32,9 @@ function InventoryCards(props){
                 </div> 
             </section>
             <section className='header header-2'>
-                <hr style={{width: '20%', marginRight: "15px"}}/>
+                <hr className='horizontal-rule-1'/>
                 <h2>Whats New on Vinyl</h2>
-                <hr style={{width:"20%", marginLeft: '15px'}}/>
+                <hr className='horizontal-rule-2'/>
             </section>
             <section id='inventory-cards'>
                 {props.inventory.map((item, index) => 
@@ -42,9 +42,9 @@ function InventoryCards(props){
                 )}
             </section>
             <section className='header header-2'>
-                <hr style={{width: '20%', marginRight: "15px"}}/>
+                <hr className='horizontal-rule-1'/>
                 <h2>Suggested Feature Films</h2>
-                <hr style={{width:"20%", marginLeft: '15px'}}/>
+                <hr className='horizontal-rule-2'/>
             </section>
             <section id='inventory-cards'>
                 {props.inventory.map((item, index) => 
@@ -52,9 +52,9 @@ function InventoryCards(props){
                 )}
             </section>
             <section className='header header-2'>
-                <hr style={{width: '20%', marginRight: "15px"}}/>
-                <h2>Browse The Lollipop Shoppe</h2>
-                <hr style={{width:"20%", marginLeft: '15px'}}/>
+                <hr className='horizontal-rule-1'/>
+                <h2>Browse Our Collection</h2>
+                <hr className='horizontal-rule-2'/>
             </section>           
             <section className='vinyl-cards'>
                 {

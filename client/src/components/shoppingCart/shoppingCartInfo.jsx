@@ -55,9 +55,9 @@ function ShoppingCartInfo(props){
     console.log(props.cart)
 
     return(
-        <div className='shopping-cart-card'>
+        <div id='shop-cart' className='shopping-cart-card'>
         <div className='cart-left-container'>
-            <img src={props.item.image}/>
+            <img className='product-image' src={props.item.image}/>
             <section>
                 <div>
                     <h4>{props.item.product_name}</h4>  
@@ -65,7 +65,7 @@ function ShoppingCartInfo(props){
                     <p>UPC:{props.item.serialNumber}</p>
                 </div>
                 <div className='button-qty-section'>
-                    <button onClick={() => removeHandler(props.item.id)}>remove item</button> 
+                    <button onClick={() => removeHandler(props.item.id)}><i class="fas fa-trash-alt"></i></button> 
                     <form className='cart-form-container'>
                         <label for='qty'>Qty: </label>
                         <input type='number' name='qty'  onChange={changeHandler} max={props.item.qty} value={props.item.quantity} readOnly/>    

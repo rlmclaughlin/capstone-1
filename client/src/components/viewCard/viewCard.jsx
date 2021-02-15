@@ -33,7 +33,7 @@ function ViewCard(props){
             </section>
             <section className='product-information-container'>
                 <img src={vinyl.product_image}/>
-                <hr style={{height: "100%", margin: "0px"}}/>
+                <hr className='view-card-hr' />
                 <div className='vinyl-product-info'> 
                     <section >
                         <h2>{vinyl.product_name}</h2>
@@ -44,10 +44,13 @@ function ViewCard(props){
                         <h6>Format: {vinyl.category}</h6>                           
                     </section>
                     <form>
-                        <button onClick={addHandler}>add to cart <i class="fas fa-shopping-cart cart-icon"></i></button>
+                        <button onClick={addHandler}>add to cart <i id='cart-icon-mobile' class="fas fa-shopping-cart cart-icon"></i></button>
                     </form>
                 </div>
             </section> 
+            <form className='mobile-view-button-container'>
+                <button className='mobile-view-button' onClick={addHandler}>add to cart <i class="fas fa-shopping-cart cart-icon"></i></button>
+            </form>            
 
         </section>
     )
