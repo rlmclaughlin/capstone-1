@@ -13,7 +13,7 @@ function SearchResults(props){
                 <h1 id='search-header' className='shop'>Vinyl Navigator Search</h1>
                 <hr style={{width:"10%", marginLeft: '15px'}}/>
             </section>  
-            {props.match.length === 0 ? <h1>Enter Your Search Query</h1>: 
+            {props.match.length === 0 ? <h1 style={{paddingTop: '5%'}}>-Enter Your Search Query-</h1>: 
             <div className='search-results'>
                 {props.match.map((item, index) => (
                 <Link style={{textDecoration: 'none', color: "black"}}to={`viewCard/${item.id}`}>
@@ -27,8 +27,7 @@ function SearchResults(props){
                                     <p className='upc'>UPC:{item.serial_number}</p>
                                 </div>
                                 <div className='button-qty-section'>
-                                    <button>Add To Cart</button> 
-                                    <form className='cart-form-container'>
+                                    <form id='search-qty-section' className='cart-form-container'>
                                         <label for='qty'>Qty:</label>
                                         <input type='number' name='qty' readOnly value={item.quantity}/>    
                                     </form>   

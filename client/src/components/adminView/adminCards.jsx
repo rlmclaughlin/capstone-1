@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 import '../../styles/adminView/adminView.css'
 
 function AdminCards(props){
@@ -27,7 +29,7 @@ function AdminCards(props){
             <tbody> 
             <tr> 
                 <td>{props.product.id}</td>
-                <td ><img style={{maxHeight: '75px', maxWidth: '75px'}}src={props.product.product_image}/></td>
+                <td ><Link to={`viewCard/${props.product.id}`}><img style={{maxHeight: '75px', maxWidth: '75px'}}src={props.product.product_image}/></Link></td>
                 <td>{props.product.product_name}</td>
                 <td>{props.product.product_description}</td>
                 <td>{props.product.price}</td>

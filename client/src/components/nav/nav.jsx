@@ -25,7 +25,7 @@ function Nav(props){
         <nav>
             <section>
                 <i class="fas fa-record-vinyl vinyl-icon"></i>
-                <h2>Vinyl Navigator</h2>
+                <NavLink style={{textDecoration: 'none', color: 'black'}} to='/'><h2>Vinyl Navigator</h2></NavLink>
             </section>
             <ul className='navbar-items'>                
                 <li>
@@ -49,6 +49,29 @@ function Nav(props){
                         <i style={{marginLeft: '5px'}} class="fas fa-shopping-cart cart-icon"></i>
                     </li>      
                 </NavLink>
+                {localStorage.getItem('username', '@admin') ? 
+                    <NavLink to='/signOut' style={{textDecoration: "none"}}>
+                        <li>
+                            <i style={{marginLeft: '5px'}} class="fas fa-user" ></i>
+                        </li>      
+                    </NavLink> 
+                    :
+                    <NavLink to='/login' style={{textDecoration: "none"}}>
+                        <li>
+                            <i style={{marginLeft: '5px'}} class="fas fa-user" ></i>
+                        </li>      
+                    </NavLink> 
+                }
+                {
+                    !localStorage.getItem('username', '@admin') ? '' 
+                    : 
+                    <NavLink to='/adminView' style={{textDecoration: "none"}}>
+                        <li>
+                            <i style={{marginLeft: '5px'}}class="fas fa-crown"></i>     
+                        </li>      
+                    </NavLink>
+                }
+
             </ul>   
         </nav>
         

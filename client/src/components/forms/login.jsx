@@ -25,9 +25,11 @@ function Login(props){
             localStorage.setItem('username', user.username)
             localStorage.setItem('email', user.email)
             props.setLoggedIn(true)
+            document.querySelector('span.error-handler').setAttribute('style', 'display: none')
             props.history.push('/')
         } else{
-            console.log("WRONG")
+            document.querySelector('span.error-handler').setAttribute('style', 'display: flex')
+            document.querySelector('span.error-handler').textContent = "Incorrect Information"
         }
     }
 
@@ -36,12 +38,12 @@ function Login(props){
         <section style={{maxWidth: '1300px'}} className='inventory-cards-container'>
         <section className='header header-background'>
             <hr style={{width: '10%', marginRight: "15px"}}/>
-            <h1>Lollipop Shoppe Vinyl</h1>
+            <h1>Vinyl Navigator Members Portal</h1>
             <hr style={{width:"10%", marginLeft: '15px'}}/>
         </section>
         <div className='login-container'>
             <div className='box'>
-                <h1>Sign In</h1>
+                <h1><i class="fas fa-record-vinyl logo"></i>Vinyl Navigator</h1>
                 <form className='login' onSubmit={submitHandler}>
                     <input name='username' 
                            type='text'
@@ -62,6 +64,7 @@ function Login(props){
                            className='email'
                            onChange={changeHandler}/>
                     <button className='btn'type='submit'>Submit</button>
+                    <span className='error-handler' ></span>
                 </form>
             </div> 
                     

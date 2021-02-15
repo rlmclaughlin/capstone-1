@@ -53,12 +53,7 @@
   .upc{
       display: none; 
   }
-  .search form label{
-    display: none; 
-  }
-  .search form input{
-    display: none; 
-  }
+
 .search-results .search-info{
   padding-left: 13px; 
 }  
@@ -100,4 +95,17 @@
   .search-results .price-section h3{
     display: none; 
   }
+}
+
+
+#search-qty-section{
+  padding-left: 0px; 
+}
+
+ .shopping-cart-card #search-qty-section input{
+  padding: 1px; 
+}
+
+.price-section .price{
+  font-size: 15px; 
 }

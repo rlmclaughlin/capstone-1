@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Nav from './components/nav/nav'
 import InventoryCards from './components/inventory/inventoryCards'
 import Login from './components/forms/login'
+import SignOut from './components/forms/signOut'
 import Register from './components/forms/login'
 import Landing from './components/landing/landing'
 import VinylCards from './components/vinyl/vinylCards'
@@ -80,6 +81,10 @@ function App() {
           
           <Route path='/login' render={props => (
             <Login {...props}  setUsers={setUsers} setLoggedIn={setLoggedIn} loggedIn={loggedIn} users={users}/>
+          )}/>
+                    
+          <Route path='/signOut' render={props => (
+            <SignOut {...props} />
           )}/>
       </div>
   );
