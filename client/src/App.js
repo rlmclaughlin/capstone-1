@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Nav from './components/nav/nav'
 import InventoryCards from './components/inventory/inventoryCards'
 import Login from './components/forms/login'
-import Register from './components/forms/register'
+import Register from './components/forms/login'
 import Landing from './components/landing/landing'
 import VinylCards from './components/vinyl/vinylCards'
 import DvdCards from './components/dvds/dvdCards'
@@ -10,6 +10,7 @@ import ShoppingCart from './components/shoppingCart/shoppingCart'
 import SearchResults from './components/searchResults/searchResults'
 import {Route} from 'react-router-dom'
 import ViewCard from './components/viewCard/viewCard'
+import AdminView from './components/adminView/adminView.jsx'
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
     const [inventory, setInventory] = useState(inventoryData)
     const [cart, setCart] = useState([])
     const [match, setMatch] = useState([])
+    const [loggedIn, setLoggedIn] = useState(false)
 
 
     const cartAddHandler = (cardID, name, product_description, price, image) => { 
@@ -40,7 +42,7 @@ function App() {
             ]))  
     }  
     console.log(match.length)
-
+    console.log("logedin", loggedIn)
 
   return (
       <div className="App">
@@ -53,11 +55,16 @@ function App() {
           <Route exact path='/searchResults' render={props => (
             <SearchResults {...props} match={match} setMatch={setMatch}/>
           )}/>
-    
+          
           <Route path='/inventory' render={props => (
             <InventoryCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
+          )}/>          
+
+          <Route path='/adminView' render={props => (
+              <AdminView {...props} inventory={inventory} setInventory={setInventory}/> 
           )}/>
-                <Route path='/vinyl' render={props => (
+
+          <Route path='/vinyl' render={props => (
             <VinylCards {...props} setCart={setCart} cart={cart} inventory={inventory}/>
           )}/>
     
@@ -70,12 +77,8 @@ function App() {
           <Route path='/viewCard/:id' render={props => (
               <ViewCard {...props} inventory={inventory} cart={cart} setCart={setCart}/> 
           )}/>
-    
           <Route path='/login' render={props => (
-            <Login {...props} users={users} setUsers={setUsers}/>
-          )}/>
-          <Route path='/register' render={props => (
-            <Register {...props}  setUsers={setUsers} users={users}/>
+            <Login {...props}  setUsers={setUsers} setLoggedIn={setLoggedIn} loggedIn={loggedIn} users={users}/>
           )}/>
       </div>
   );

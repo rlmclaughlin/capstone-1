@@ -4,7 +4,7 @@ import '../../styles/searchResults.css'
 
 function SearchResults(props){
 
-    if(props.length === 0){return "your results are comming..."}
+    if(props.length === 0 ){return "your results are comming..."}
     console.log(props.match)
     return(
         <section className='shopping-cart-container' style={{ maxWidth: '1300px', justifyContent: 'center'}}>     

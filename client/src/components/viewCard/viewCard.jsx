@@ -20,9 +20,9 @@ function ViewCard(props){
                 quantity: 1              
             }
         ]))
-        
     }
-
+    
+    
     return(
 
         <section className='inventory-cards-container'>
