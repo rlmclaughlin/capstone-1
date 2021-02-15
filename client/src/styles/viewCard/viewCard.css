@@ -71,7 +71,7 @@
 
 .product-information-container h2{
     margin: 0;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: 300; 
 }
 
@@ -221,7 +221,8 @@
 
 .vinyl-product-info form button{
     width: 60%;
-    max-width: 200px;
+    max-width: 190px;
+    min-width: 190px;
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.397);
     background: #00af0f;
