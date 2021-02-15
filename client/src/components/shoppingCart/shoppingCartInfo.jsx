@@ -22,12 +22,14 @@ function ShoppingCartInfo(props){
 
     const decrementPrice = (e, item) => { 
         e.preventDefault()
-        setQty(prev => prev - 1)
         if(props.item.quantity === 0){
             setQty(0)
             props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: qty } : x))
+        } else if(qty === 0){
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0 } : x))
         } else {
             props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: qty - 1} : x))
+            setQty(prev => prev - 1)
             return props.setTotal(prev => prev - item)
         }
     }

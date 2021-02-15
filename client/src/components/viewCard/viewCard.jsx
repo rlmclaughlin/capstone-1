@@ -20,6 +20,7 @@ function ViewCard(props){
                 quantity: 1              
             }
         ]))
+        props.history.push('/cart')
     }
     
     console.log(vinyl.product_image)
