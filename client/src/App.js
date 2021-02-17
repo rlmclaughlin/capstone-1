@@ -53,7 +53,7 @@ function App() {
           )}/>
 
           <Route path='/searchResults' render={props => (
-            <SearchResults {...props} match={match} setMatch={setMatch}/>
+            <SearchResults {...props} match={match} setMatch={setMatch} inventory={inventory} setInventory={setInventory}/>
           )}/>
           
           <Route path='/inventory' render={props => (
@@ -75,7 +75,7 @@ function App() {
               <ShoppingCart {...props}  cart={cart} setCart={setCart} ticket={ticket} setTicket={setTicket} inventory={inventory} setInventory={setInventory}/>
           )}/>
           <Route path='/viewCard/:id' render={props => (
-              <ViewCard {...props} inventory={inventory} cart={cart} setCart={setCart}/> 
+              <ViewCard {...props} inventory={inventory} setInventory={setInventory} cart={cart} setCart={setCart}/> 
           )}/>
           
           <Route path='/login' render={props => (

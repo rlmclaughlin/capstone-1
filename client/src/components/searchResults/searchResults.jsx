@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import '../../styles/searchResults.css'
 
 function SearchResults(props){
-    console.log(props)
+    const [qty, setQty] = useState(0)
 
+
+   useEffect(() => {
+      return  props.match.map(x => (
+           props.inventory.map(y => (
+               x.id === y.id ? setQty(y.quantity) : false)
+           ))
+       )
+   }, [])
     
+   if(!props.inventory.length){return "gathering data"}
+   
     return(
         <section className='shopping-cart-container' style={{ maxWidth: '1300px', justifyContent: 'center'}}>     
             <section className='cart-header cart-header-background' >
@@ -29,7 +39,7 @@ function SearchResults(props){
                                 <div className='button-qty-section'>
                                     <form id='search-qty-section' className='cart-form-container'>
                                         <label for='qty'>Qty:</label>
-                                        <input type='number' name='qty' readOnly value={item.quantity}/>    
+                                        <input type='number' name='qty' readOnly value={qty}/>    
                                     </form>   
                                     <h5 className='mobile-price'>Price: ${item.price}</h5>                                             
                                 </div>

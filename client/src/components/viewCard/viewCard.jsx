@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import '../../styles/viewCard/viewCard.css'
 
 function ViewCard(props){
-    const vinyl = props.inventory[props.match.params.id - 1]
-    console.log(vinyl)
+    const vinyl = props.inventory[props.match.params.id]
+    const[inCart, setInCart] = useState(false)
 
-    const addHandler = (e) => {
+    useEffect(() => {
+        props.cart.map(item => 
+            item.id === vinyl.id && item.inCart === true ? setInCart(true) : false
+        )
+    }, [])
+
+    const addHandler = (e) => { 
         e.preventDefault()
-        props.setCart(items => ([
+        if(!inCart){
+            props.setCart(items => ([
             ...items,{
                 id: vinyl.id,
                 product_name: vinyl.product_name,
@@ -17,13 +24,19 @@ function ViewCard(props){
                 category:vinyl.category,
                 serialNumber: vinyl.serial_number,
                 qty: vinyl.quantity,
-                quantity: 1              
-            }
-        ]))
-        props.history.push('/cart')
+                inCart: true,
+                quantity: 1   
+                }
+            ]))  
+            props.setInventory(props.inventory.map((x) => x.id === vinyl.id ? {...x, quantity: x.quantity - 1} : x ))            
+            setInCart(true)
+            console.log(props.cart)
+            props.history.push('/cart')
+        } else {
+            console.log("Item already in basket")
+        }
     }
-    
-    console.log(vinyl.product_image)
+console.log(vinyl.id)
     return(
 
         <section className='inventory-cards-container'>
@@ -45,14 +58,13 @@ function ViewCard(props){
                         <h6>Format: {vinyl.category}</h6>                           
                     </section>
                     <form>
-                        <button onClick={addHandler}>add to cart <i id='cart-icon-mobile' class="fas fa-shopping-cart cart-icon"></i></button>
+                        <button style={{background: inCart === true ? "orange" : "green"}} onClick={addHandler}>{inCart === true ? `Currently In Cart` : `Add to Cart`}<i id='cart-icon-mobile' class="fas fa-shopping-cart cart-icon"></i></button>
                     </form>
                 </div>
             </section> 
             <form className='mobile-view-button-container'>
-                <button className='mobile-view-button' onClick={addHandler}>add to cart <i class="fas fa-shopping-cart cart-icon"></i></button>
+                <button  className='mobile-view-button' onClick={addHandler}>add to cart <i class="fas fa-shopping-cart cart-icon"></i></button>
             </form>            
-
         </section>
     )
 }
