@@ -5,12 +5,19 @@ import '../../styles/shoppingCart/shoppingCart.css'
 function ShoppingCartInfo(props){
 
     const [qty, setQty] = useState(1)
+
+    useEffect(() => {
+        props.cart.map(item => 
+            item.id === props.item.id && item.inCart === false ? props.setCart(props.cart.filter(item => item.id !== props.item.id)) : ''
+
+        )
+    })
     
 
     const incrementPrice = (e, item) => { 
         e.preventDefault()
         setQty(prev => prev + 1)
-        if(props.item.qty <= qty){
+        if(props.item.qty === qty){
             return setQty(props.item.qty)
         } else {
             props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: x.quantity + 1} : x ))
@@ -21,25 +28,22 @@ function ShoppingCartInfo(props){
 
 
     const decrementPrice = (e, item) => {
-        console.log(props.cart) 
         e.preventDefault()
-        if(props.item.quantity === 0){
-            setQty(0)
-            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty }: x ))        
-            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: qty } : x))
-        } else if(qty === 0){
-            console.log("b")
-            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0 } : x))
-            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty} : x ))        
-        } else if(props.item.quantity === 1){
+        if(props.item.quantity === 1){
             setQty(prev => prev - 1)
-            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0} : x))
-            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty} : x ))                   
-            
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0, inCart: false } : x))
+            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty }: x ))        
+            return props.setTotal(prev => prev - item)
+
+        } else if(props.item.quantity === 0 || qty === 0){
+            setQty(0)
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0 } : x))
+            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty }: x ))        
+
         } else {
             setQty(prev => prev - 1)
-            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: qty - 1} : x))
-            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: qty - 1} : x ))
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: x.quantity - 1} : x))
+            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: x.quantity + 1} : x ))
             return props.setTotal(prev => prev - item)
         }
     }
@@ -48,17 +52,19 @@ function ShoppingCartInfo(props){
     const removeHandler = (targetId) => {
         if(props.cart.length === 1){
             props.setCart([])
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0, inCart: false } : x))
             props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty} : x ))
             props.setTotal(0)
             return props.setCart(props.cart.filter(item => item.id !== targetId))    
         } else if(props.item.quantity === 0){
             props.setTotal(prevState => prevState - 0)
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0, inCart: false } : x))
             props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty} : x ))
             return props.setCart(props.cart.filter(item => item.id !== targetId)) 
         } else {
+        props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0, inCart: false } : x))
         props.setTotal(prevState => prevState - props.item.price * props.item.quantity)
         props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty} : x ))
-
         return props.setCart(props.cart.filter(item => item.id !== targetId)) 
         }
     }

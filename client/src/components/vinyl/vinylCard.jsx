@@ -3,13 +3,16 @@ import {Link} from 'react-router-dom'
 import '../../styles/vinyl/vinylCard.css'
 
 function VinylCard(props){
-    const [inCart, setInCart] = useState(false)
-    
-    useEffect(() => {
-        props.cart.map(item => item.id === props.vinyl.id ? setInCart(true) : setInCart(false))
-    })
+    const[inCart, setInCart] = useState(false)
 
-    const cartAddHandler = () => { 
+    useEffect(() => {
+        props.cart.map(item => 
+            item.id === props.vinyl.id && item.inCart === true ? setInCart(true) : false
+        )
+    }, [])
+
+    const cartAddHandler = (e) => { 
+        e.preventDefault()
         if(!inCart){
             props.setCart(items => ([
                 ...items, {
@@ -21,17 +24,17 @@ function VinylCard(props){
                    category: props.vinyl.category,
                    serialNumber: props.vinyl.serial_number,
                    qty: props.vinyl.quantity,
+                   inCart: true,
                    quantity: 1
                 }
             ]))  
-            props.setInventory(props.inventory.map((x) => x.id === props.vinyl.id ? {...x, quantity: x.quantity - 1} : x ))
+            props.setInventory(props.inventory.map((x) => x.id === props.vinyl.id ? {...x, quantity: x.quantity - 1} : x ))            
+            setInCart(true)
         } else {
-            console.log("already in cart")
+            console.log("FAIL")
         }
-
     }
-
-
+    if(!props){return "loading"}
     return(
         <section className='vinyl-card-container'>
             <Link to={`viewCard/${props.vinyl.id}`}>
@@ -42,8 +45,8 @@ function VinylCard(props){
                 <p className='manufacturer'>{props.vinyl.product_description} </p> 
                 <div className='vinyl-price-button'> 
                     <h4>Price: ${props.vinyl.price}</h4> 
-                    <p className='isFalse' onClick={() => {cartAddHandler()}}>        
-                      <i style={{color: inCart === true ? "green" : "black"}} class="fas fa-shopping-cart cart-icon"></i>
+                    <p className='isFalse' onClick={(e) => {cartAddHandler(e)}}>        
+                      <i style={{color: inCart === true ? 'green' : 'black'}} class="fas fa-shopping-cart cart-icon"></i>
                     </p>
                 </div>                      
             </div>
