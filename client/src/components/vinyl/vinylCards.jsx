@@ -15,7 +15,7 @@ function VinylCards(props){
             <section className='vinyl-cards'>
                 {
                     albumList.map((item, index) => (
-                        <VinylCard key={index} cart={props.cart} setCart={props.setCart} vinyl={item} />
+                        <VinylCard key={index} cart={props.cart} inventory={props.inventory} setInventory={props.setInventory} setCart={props.setCart} vinyl={item} />
                     ))
                 }
             </section>

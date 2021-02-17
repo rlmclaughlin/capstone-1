@@ -1,12 +1,16 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import '../../styles/vinyl/vinylCard.css'
 
 function VinylCard(props){
     const [inCart, setInCart] = useState(false)
     
+    useEffect(() => {
+        props.cart.map(item => item.id === props.vinyl.id ? setInCart(true) : setInCart(false))
+    })
+
     const cartAddHandler = () => { 
-        setInCart(!inCart)
+        if(!inCart){
             props.setCart(items => ([
                 ...items, {
                    id: props.vinyl.id,
@@ -20,7 +24,11 @@ function VinylCard(props){
                    quantity: 1
                 }
             ]))  
-            console.log(props.cart)
+            props.setInventory(props.inventory.map((x) => x.id === props.vinyl.id ? {...x, quantity: x.quantity - 1} : x ))
+        } else {
+            console.log("already in cart")
+        }
+
     }
 
 
@@ -34,8 +42,8 @@ function VinylCard(props){
                 <p className='manufacturer'>{props.vinyl.product_description} </p> 
                 <div className='vinyl-price-button'> 
                     <h4>Price: ${props.vinyl.price}</h4> 
-                    <p className={inCart === true ? 'isTrue' : 'isFalse'} onClick={() => {cartAddHandler()}}>        
-                      <i class="fas fa-shopping-cart cart-icon"></i>
+                    <p className='isFalse' onClick={() => {cartAddHandler()}}>        
+                      <i style={{color: inCart === true ? "green" : "black"}} class="fas fa-shopping-cart cart-icon"></i>
                     </p>
                 </div>                      
             </div>

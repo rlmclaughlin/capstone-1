@@ -63,10 +63,6 @@
     margin-top: 15px;
 }
 
-.isTrue {
-    display: none; 
-}
-
 .isFalse {
     border: none;
     color: white;
@@ -87,4 +83,5 @@
     margin-right: 0px; 
     margin-left: 0px; 
 }
+
 

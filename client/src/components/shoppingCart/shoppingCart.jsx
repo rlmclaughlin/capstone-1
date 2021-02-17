@@ -5,6 +5,7 @@ import ShoppingCartInfo from './shoppingCartInfo'
 function ShoppingCart(props){
     const [total, setTotal] = useState()
 
+
     useEffect(() => {
         let myTotal = 0 
         props.cart.map(item => 
@@ -18,8 +19,11 @@ function ShoppingCart(props){
     if(!total){
         return <div className='empty-cart'>Your Cart Is Empty</div>
     }
+
+    const createTicket = () => {
     
-    
+    }
+
     return(
         <section className='shopping-cart-container'>     
             <section className='cart-header cart-header-background'>
@@ -29,12 +33,12 @@ function ShoppingCart(props){
             </section>  
             {
                 props.cart.map((item, index) => (
-                    <ShoppingCartInfo item={item} key={index} total={total} setTotal={setTotal} setCart={props.setCart} cart={props.cart}/> 
+                    <ShoppingCartInfo item={item} key={index} createTicket={createTicket} total={total} setTotal={setTotal} setCart={props.setCart} cart={props.cart} inventory={props.inventory} setInventory={props.setInventory}/> 
                 ))
             }
             <section className='total'>
                 {!total ? "loading ..." : <h2>Total: ${total.toFixed(2)}</h2>}
-                <button>Submit Order</button>
+                <button onClick={() => {createTicket()}}>Submit Order</button>
             </section>
         </section>
     )

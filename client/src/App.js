@@ -24,6 +24,7 @@ function App() {
     const [cart, setCart] = useState([])
     const [match, setMatch] = useState([])
     const [loggedIn, setLoggedIn] = useState(false)
+    const [ticket, setTicket] = useState([])
 
 
     const cartAddHandler = (cardID, name, product_description, price, image) => { 
@@ -42,8 +43,6 @@ function App() {
                 }
             ]))  
     }  
-    console.log(match.length)
-    console.log("logedin", loggedIn)
 
   return (
       <div className="App">
@@ -66,14 +65,14 @@ function App() {
           )}/>
 
           <Route path='/vinyl' render={props => (
-            <VinylCards {...props} setCart={setCart} cart={cart} inventory={inventory}/>
+            <VinylCards {...props} setCart={setCart} cart={cart} setInventory={setInventory} inventory={inventory}/>
           )}/>
     
           <Route path='/dvd' render={props => (
               <DvdCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
           )}/>
           <Route path='/cart' render={props => (
-              <ShoppingCart {...props}  cart={cart} setCart={setCart} inventory={inventory}/>
+              <ShoppingCart {...props}  cart={cart} setCart={setCart} ticket={ticket} setTicket={setTicket} inventory={inventory} setInventory={setInventory}/>
           )}/>
           <Route path='/viewCard/:id' render={props => (
               <ViewCard {...props} inventory={inventory} cart={cart} setCart={setCart}/> 
