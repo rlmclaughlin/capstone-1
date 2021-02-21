@@ -12,7 +12,7 @@ function SignOut(props){
 
     return(
         <div className='sign-out-container'>
-            Click <span onClick={signOutHandler}>&nbsp;Here&nbsp;</span> to sign out. 
+            Click <span onClick={signOutHandler}>&nbsp;here&nbsp;</span> to sign out. 
         </div>
     )
 }

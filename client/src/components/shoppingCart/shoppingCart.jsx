@@ -47,7 +47,10 @@ function ShoppingCart(props){
             <section className='total'>
                 {!total ? "loading ..." : <h2>Total: ${total.toFixed(2)}</h2>}
                 <StripeCheckout stripeKey="pk_test_51INMqZJa1mRCNszpMNOKrLfgHJEf8ww3XD4D4TIhyTFCKMSLgjMTFUPE0QnJd9Pjeb5Z9RPFcA6NmdttMK5e6TiR00znYVrmbs"
-                                token={handleToken} />
+                                token={handleToken}
+                                billingAddress
+                                shippingAddress
+                                amount={total * 100} />
             </section>
         </section>
     )
