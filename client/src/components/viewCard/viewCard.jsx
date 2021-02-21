@@ -11,6 +11,7 @@ function ViewCard(props){
         )
     }, [])
 
+
     const addHandler = (e) => { 
         e.preventDefault()
         if(!inCart){
@@ -30,15 +31,13 @@ function ViewCard(props){
             ]))  
             props.setInventory(props.inventory.map((x) => x.id === vinyl.id ? {...x, quantity: x.quantity - 1} : x ))            
             setInCart(true)
-            console.log(props.cart)
             props.history.push('/cart')
         } else {
             console.log("Item already in basket")
         }
     }
-console.log(vinyl.id)
-    return(
 
+    return(
         <section className='inventory-cards-container'>
             <section className='header header-background'>
                 <hr style={{width: '10%', marginRight: "15px"}}/>

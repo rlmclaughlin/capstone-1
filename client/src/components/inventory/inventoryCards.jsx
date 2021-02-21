@@ -19,7 +19,6 @@ function InventoryCards(props){
                 <h1>The Lollipop Shoppe</h1>
                 <hr style={{width:"10%", marginLeft: '15px'}}/>
             </section>
- 
             <section className='banner-menu'>
                 <div className=' card card1'>
                     <h3>Vinyl</h3>
@@ -41,7 +40,6 @@ function InventoryCards(props){
                    item.category == 'vinyl' && count < 5 ? limitCards(<InventoryCard key={index} inventory={item}/>) : ''
                 )}
             </section>
-
             <section className='header header-2'>
                 <hr className='horizontal-rule-1'/>
                 <h2>Browse Our Collection</h2>
@@ -50,7 +48,6 @@ function InventoryCards(props){
             <section className='vinyl-cards'>
                 {
                     props.inventory.map((item, index) => (
-
                         index > 8 && index < 16 ?
                         <InventoryAllCards setCart={props.setCart} 
                                            key={index} 

@@ -11,6 +11,7 @@ function VinylCard(props){
         )
     }, [])
 
+
     const cartAddHandler = (e) => { 
         e.preventDefault()
         if(!inCart){
@@ -31,10 +32,12 @@ function VinylCard(props){
             props.setInventory(props.inventory.map((x) => x.id === props.vinyl.id ? {...x, quantity: x.quantity - 1} : x ))            
             setInCart(true)
         } else {
-            console.log("FAIL")
+            console.log("Incorrect Information")
         }
     }
-    if(!props){return "loading"}
+
+    if(!props){return "Loading..."}
+
     return(
         <section className='vinyl-card-container'>
             <Link to={`viewCard/${props.vinyl.id}`}>

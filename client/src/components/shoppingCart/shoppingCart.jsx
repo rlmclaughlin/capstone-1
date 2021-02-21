@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import '../../styles/shoppingCart/shoppingCart.css'
 import ShoppingCartInfo from './shoppingCartInfo'
+import StripeCheckout from 'react-stripe-checkout'
 
 function ShoppingCart(props){
     const [total, setTotal] = useState()
-
 
     useEffect(() => {
         let myTotal = 0 
@@ -14,14 +14,15 @@ function ShoppingCart(props){
        setTotal(myTotal)
     }, [])
 
+    const handleToken = (token, address) => {
+        console.log({token, address})
+        props.history.push('/orderConfirmation')
+    }
+
     if(!props.cart.length && !total){
         return <div className='empty-cart'>Your Cart Is Empty</div>}
     if(!total){
         return <div className='empty-cart'>Your Cart Is Empty</div>
-    }
-
-    const createTicket = () => {
-    
     }
 
     return(
@@ -33,12 +34,20 @@ function ShoppingCart(props){
             </section>  
             {
                 props.cart.map((item, index) => (
-                    <ShoppingCartInfo item={item} key={index} createTicket={createTicket} total={total} setTotal={setTotal} setCart={props.setCart} cart={props.cart} inventory={props.inventory} setInventory={props.setInventory}/> 
+                    <ShoppingCartInfo item={item} 
+                                      key={index}  
+                                      total={total} 
+                                      setTotal={setTotal} 
+                                      setCart={props.setCart} 
+                                      cart={props.cart} 
+                                      inventory={props.inventory} 
+                                      setInventory={props.setInventory}/> 
                 ))
             }
             <section className='total'>
                 {!total ? "loading ..." : <h2>Total: ${total.toFixed(2)}</h2>}
-                <button onClick={() => {createTicket()}}>Submit Order</button>
+                <StripeCheckout stripeKey="pk_test_51INMqZJa1mRCNszpMNOKrLfgHJEf8ww3XD4D4TIhyTFCKMSLgjMTFUPE0QnJd9Pjeb5Z9RPFcA6NmdttMK5e6TiR00znYVrmbs"
+                                token={handleToken} />
             </section>
         </section>
     )

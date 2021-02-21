@@ -34,45 +34,40 @@ function Login(props){
     }
 
     return(
-
         <section style={{maxWidth: '1300px'}} className='inventory-cards-container'>
-        <section className='header header-background'>
-            <hr style={{width: '10%', marginRight: "15px"}}/>
-            <h1>Vinyl Navigator Members Portal</h1>
-            <hr style={{width:"10%", marginLeft: '15px'}}/>
+            <section className='header header-background'>
+                <hr style={{width: '10%', marginRight: "15px"}}/>
+                <h1>Vinyl Navigator Members Portal</h1>
+                <hr style={{width:"10%", marginLeft: '15px'}}/>
+            </section>
+            <div className='login-container'>
+                <div className='box'>
+                    <h1><i class="fas fa-record-vinyl logo"></i>Vinyl Navigator</h1>
+                    <form className='login' onSubmit={submitHandler}>
+                        <input name='username' 
+                               type='text'
+                               placeholder='username'
+                               value={user.username}
+                               onChange={changeHandler}
+                               className='email'/>
+                        <input name='email' 
+                               type='text'
+                               placeholder='email'
+                               value={user.email}
+                               className='email'
+                               onChange={changeHandler}/>
+                        <input name='password' 
+                               type='password'
+                               placeholder='password'
+                               value={user.password}
+                               className='email'
+                               onChange={changeHandler}/>
+                        <button className='btn'type='submit'>Submit</button>
+                        <span className='error-handler' ></span>
+                    </form>
+                </div>    
+            </div>
         </section>
-        <div className='login-container'>
-            <div className='box'>
-                <h1><i class="fas fa-record-vinyl logo"></i>Vinyl Navigator</h1>
-                <form className='login' onSubmit={submitHandler}>
-                    <input name='username' 
-                           type='text'
-                           placeholder='username'
-                           value={user.username}
-                           onChange={changeHandler}
-                           className='email'/>
-                    <input name='email' 
-                           type='text'
-                           placeholder='email'
-                           value={user.email}
-                           className='email'
-                           onChange={changeHandler}/>
-                    <input name='password' 
-                           type='password'
-                           placeholder='password'
-                           value={user.password}
-                           className='email'
-                           onChange={changeHandler}/>
-                    <button className='btn'type='submit'>Submit</button>
-                    <span className='error-handler' ></span>
-                </form>
-            </div> 
-                    
-
-        </div>
-        </section>
-
- 
     )
 }
 

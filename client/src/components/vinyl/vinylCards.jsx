@@ -4,7 +4,9 @@ import '../../styles/vinyl/vinylCards.css'
 
 
 function VinylCards(props){
+
     let albumList = props.inventory.filter(item => item.category == 'vinyl')
+
     return(
         <section className='inventory-cards-container'>
             <section className='header header-background'>

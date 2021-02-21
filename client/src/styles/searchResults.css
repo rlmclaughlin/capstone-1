@@ -40,8 +40,6 @@
   display: none; 
 }
 
-
-
 @media(max-width: 580px){
   .search-image{
     max-height: 100px;
@@ -56,22 +54,19 @@
 
 .search-results .search-info{
   padding-left: 13px; 
-}  
-
+  }  
 }
 
 @media(max-width: 515px){
-.search-results .price-section h3{
-  font-size: 15px; 
-}  
-
-.search-info h4{
-  font-size: 13px; 
-}
-
-#search-header{
-  margin: 15px auto; 
-}
+  .search-results .price-section h3{
+    font-size: 15px; 
+  }  
+  .search-info h4{
+    font-size: 13px; 
+  }
+  #search-header{
+    margin: 15px auto; 
+  }
 }
 
 
@@ -95,7 +90,6 @@
     display: none; 
   }
 }
-
 
 #search-qty-section{
   padding-left: 0px; 

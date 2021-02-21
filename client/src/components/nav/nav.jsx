@@ -17,10 +17,9 @@ function Nav(props){
                 || item.product_description.toLowerCase() === search.toLowerCase())
         props.setMatch(queryFilter)
         setSearch('')
-       }
+    }
 
-       console.log(props.match)
-      
+
     return(
         <nav>
             <section>
@@ -71,10 +70,8 @@ function Nav(props){
                         </li>      
                     </NavLink>
                 }
-
             </ul>   
-        </nav>
-        
+        </nav>        
     )
 }
 

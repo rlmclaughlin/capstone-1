@@ -3,7 +3,6 @@ import Nav from './components/nav/nav'
 import InventoryCards from './components/inventory/inventoryCards'
 import Login from './components/forms/login'
 import SignOut from './components/forms/signOut'
-import Register from './components/forms/login'
 import Landing from './components/landing/landing'
 import VinylCards from './components/vinyl/vinylCards'
 import DvdCards from './components/dvds/dvdCards'
@@ -12,6 +11,7 @@ import SearchResults from './components/searchResults/searchResults'
 import {Route} from 'react-router-dom'
 import ViewCard from './components/viewCard/viewCard'
 import AdminView from './components/adminView/adminView.jsx'
+import OrderConfirmation from './components/orderConfirmation/orderConfirmation.jsx'
 
 import './App.css';
 
@@ -25,7 +25,6 @@ function App() {
     const [match, setMatch] = useState([])
     const [loggedIn, setLoggedIn] = useState(false)
     const [ticket, setTicket] = useState([])
-
 
     const cartAddHandler = (cardID, name, product_description, price, image) => { 
         let doesExist = false
@@ -71,20 +70,27 @@ function App() {
           <Route path='/dvd' render={props => (
               <DvdCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
           )}/>
+
           <Route path='/cart' render={props => (
               <ShoppingCart {...props}  cart={cart} setCart={setCart} ticket={ticket} setTicket={setTicket} inventory={inventory} setInventory={setInventory}/>
           )}/>
+
           <Route path='/viewCard/:id' render={props => (
               <ViewCard {...props} inventory={inventory} setInventory={setInventory} cart={cart} setCart={setCart}/> 
           )}/>
-          
+
+          <Route path='/orderConfirmation' render={props => (
+              <OrderConfirmation {...props} setCart={setCart}/> 
+          )}/>
+
           <Route path='/login' render={props => (
             <Login {...props}  setUsers={setUsers} setLoggedIn={setLoggedIn} loggedIn={loggedIn} users={users}/>
-          )}/>
-                    
+          )}/>       
+
           <Route path='/signOut' render={props => (
             <SignOut {...props} />
           )}/>
+
       </div>
   );
 }

@@ -6,7 +6,6 @@ function SignOut(props){
     const signOutHandler = () => {
         localStorage.removeItem('username')
         localStorage.removeItem('email')
-        
         props.history.push('/')
         window.location.reload()
     }
