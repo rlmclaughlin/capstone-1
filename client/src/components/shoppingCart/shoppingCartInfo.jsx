@@ -31,14 +31,10 @@ function ShoppingCartInfo(props){
         e.preventDefault()
         if(props.item.quantity === 1){
             setQty(prev => prev - 1)
-            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0, inCart: false } : x))
+            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: x.quantity - 1, inCart: false } : x))
             props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty }: x ))        
             return props.setTotal(prev => prev - item)
-        } else if(props.item.quantity === 0 || qty === 0){
-            setQty(0)
-            props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: 0 } : x))
-            props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: props.item.qty }: x ))        
-        } else {
+        }  else {
             setQty(prev => prev - 1)
             props.setCart(props.cart.map((x) => x.id === props.item.id ? {...x, quantity: x.quantity - 1} : x))
             props.setInventory(props.inventory.map((x) => x.id === props.item.id ? {...x, quantity: x.quantity + 1} : x ))
