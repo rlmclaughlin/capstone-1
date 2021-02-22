@@ -52,7 +52,6 @@
     }   
 }
 
-
 .header h1{
     width: auto;
 }
@@ -139,7 +138,6 @@
         }
     }
     
-
 #inventory-cards{
     width: 100%;
     display: flex; 
@@ -154,7 +152,6 @@
     }
 }
 
-
 .horizontal-rule-1{
     width: 20%;
     margin-right: 15px; 
@@ -164,9 +161,6 @@
     width: 20%;
     margin-left: 15px; 
 }
-
-
-
 
 @media(max-width: 791px){
     .horizontal-rule-1{
@@ -181,7 +175,6 @@
         margin-left: 15px; 
     }    
 }
-
 
 @media(max-width: 588px){
     .horizontal-rule-1{

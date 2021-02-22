@@ -6,8 +6,6 @@
     justify-content: center; 
 }
 
-
-
 @media(max-width: 835px){
     .product-information-container{
         padding-top: 10px; 
@@ -291,7 +289,6 @@
         color: white;
         letter-spacing: 1.1px;
         box-shadow: 1px 4px 15px black; 
-
     }
 }
 

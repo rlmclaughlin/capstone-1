@@ -32,7 +32,7 @@ function InventoryCards(props){
             </section>
             <section className='header header-2'>
                 <hr className='horizontal-rule-1'/>
-                <h2>Whats New on Vinyl</h2>
+                <h2>Whats New On Vinyl</h2>
                 <hr className='horizontal-rule-2'/>
             </section>
             <section id='inventory-cards'>
@@ -42,7 +42,7 @@ function InventoryCards(props){
             </section>
             <section className='header header-2'>
                 <hr className='horizontal-rule-1'/>
-                <h2>Browse Our Collection</h2>
+                <h2>Suggestions For You</h2>
                 <hr className='horizontal-rule-2'/>
             </section>           
             <section className='vinyl-cards'>

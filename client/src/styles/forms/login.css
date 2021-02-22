@@ -15,7 +15,7 @@
       margin-bottom: 25px; 
   }
 
-    .login-container p{
+  .login-container p{
     font-size:12px;
     text-decoration: none;
     color:#ffffff;
@@ -63,8 +63,7 @@
     padding-bottom:5px;
     color:white;
     border-radius:4px;
-    border: #27ae60 1px solid;
-    
+    border: #27ae60 1px solid;   
     margin-top:20px;
     margin-bottom:20px;
     float:left;
@@ -84,8 +83,7 @@
     padding-bottom:5px;
     color:white;
     border-radius:4px;
-    border: #2980b9 1px solid;
-    
+    border: #2980b9 1px solid;   
     margin-top:20px;
     margin-bottom:20px;
     margin-left:10px;
@@ -94,7 +92,7 @@
   }
   
   #btn2:hover{ 
-  background:#3594D2; 
+    background:#3594D2; 
   }
 
   span.error-handler{

@@ -6,6 +6,7 @@
 
 .search-results{
     display: flex; 
+    flex-direction: column;
 }
 
 @media(max-width: 580px){

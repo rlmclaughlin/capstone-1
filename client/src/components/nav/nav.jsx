@@ -14,7 +14,12 @@ function Nav(props){
         e.preventDefault()
         let queryFilter = props.inventory.filter(item => 
             item.product_name.toLowerCase() === search.toLowerCase() 
-                || item.product_description.toLowerCase() === search.toLowerCase())
+                || item.product_description.toLowerCase() === search.toLowerCase() 
+                || item.serial_number === Number(search)
+                || item.manufacturer.toLowerCase() === search.toLowerCase()
+                || item.category.toLowerCase() === search.toLowerCase()
+                || item.price === Number(search)
+        )
         props.setMatch(queryFilter)
         setSearch('')
     }
