@@ -45,7 +45,7 @@ function SearchResults(props){
                                     </section>
                                 </div>
                                 <div className='price-section'>
-                                    <i class="fas fa-record-vinyl vinyl-icon"></i>
+                                    <i className="fas fa-record-vinyl vinyl-icon"></i>
                                     <h3 className='price'>Price: ${item.price}</h3>                                             
                                 </div>
                             </div> 

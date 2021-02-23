@@ -94,7 +94,7 @@ function ShoppingCartInfo(props){
                 </section>
             </div>
             <div style={{display: "flex", flexDirection: 'column', justifyContent:"space-between", alignItems: "flex-end"}}>
-                <i class="fas fa-record-vinyl vinyl-icon"></i>
+                <i className="fas fa-record-vinyl vinyl-icon"></i>
                 <h3 className='price'>Price: ${props.item.price}</h3> 
             </div>                                          
         </div>       

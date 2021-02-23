@@ -1,10 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import '../../styles/nav/nav.css'
-
-
-//<NavLink to='/vinyl'><li>Vinyl</li></NavLink>
-//<NavLink to='dvd'><li>DVD/BluRay</li></NavLink>
 
 
 function Nav(props){
@@ -28,7 +24,7 @@ function Nav(props){
     return(
         <nav>
             <section>
-                <i class="fas fa-record-vinyl vinyl-icon"></i>
+                <i className="fas fa-record-vinyl vinyl-icon"></i>
                 <NavLink style={{textDecoration: 'none', color: 'black'}} to='/'><h2>Vinyl Navigator</h2></NavLink>
             </section>
             <ul className='navbar-items'>                
@@ -42,7 +38,7 @@ function Nav(props){
                                        value={search} 
                                        onChange={(e) => {setSearch(e.target.value)}}/>
                             </NavLink> 
-                            <button type='submit'><i class="fas fa-search search-icon"></i></button>
+                            <button type='submit'><i className="fas fa-search search-icon"></i></button>
                         </form>
                     </div>
                 </li>

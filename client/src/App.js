@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Nav from './components/nav/nav'
 import InventoryCards from './components/inventory/inventoryCards'
 import Login from './components/forms/login'
 import SignOut from './components/forms/signOut'
 import Landing from './components/landing/landing'
 import VinylCards from './components/vinyl/vinylCards'
-import DvdCards from './components/dvds/dvdCards'
 import ShoppingCart from './components/shoppingCart/shoppingCart'
 import SearchResults from './components/searchResults/searchResults'
 import {Route} from 'react-router-dom'
@@ -24,24 +23,7 @@ function App() {
     const [cart, setCart] = useState([])
     const [match, setMatch] = useState([])
     const [loggedIn, setLoggedIn] = useState(false)
-    const [ticket, setTicket] = useState([])
 
-    const cartAddHandler = (cardID, name, product_description, price, image) => { 
-        let doesExist = false
-        cart.map( item => (
-            item.id === cardID ? doesExist = true : doesExist = false 
-        ))  
-        doesExist ? console.log("already Exist") : 
-            setCart(items => ([
-                ...items, {
-                    id: cardID,
-                    product_name: name,
-                    description: product_description,
-                    price: price,
-                    image: image
-                }
-            ]))  
-    }  
 
   return (
       <div className="App">
@@ -56,7 +38,7 @@ function App() {
           )}/>
           
           <Route path='/inventory' render={props => (
-            <InventoryCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
+            <InventoryCards {...props} setCart={setCart}  inventory={inventory}/>
           )}/>          
 
           <Route path='/adminView' render={props => (
@@ -66,13 +48,9 @@ function App() {
           <Route path='/vinyl' render={props => (
             <VinylCards {...props} setCart={setCart} cart={cart} setInventory={setInventory} inventory={inventory}/>
           )}/>
-    
-          <Route path='/dvd' render={props => (
-              <DvdCards {...props} setCart={setCart} cartAddHandler={cartAddHandler} inventory={inventory}/>
-          )}/>
 
           <Route path='/cart' render={props => (
-              <ShoppingCart {...props}  cart={cart} setCart={setCart} ticket={ticket} setTicket={setTicket} inventory={inventory} setInventory={setInventory}/>
+              <ShoppingCart {...props}  cart={cart} setCart={setCart} inventory={inventory} setInventory={setInventory}/>
           )}/>
 
           <Route path='/viewCard/:id' render={props => (

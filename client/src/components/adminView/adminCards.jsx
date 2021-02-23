@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 import '../../styles/adminView/adminView.css'
 
 function AdminCards(props){
-    console.log(props.product)
 
     const deleteHandler = () => {
         props.setInventory(props.inventory.filter(item => item.id !== props.product.id))

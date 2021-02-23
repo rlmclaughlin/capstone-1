@@ -42,7 +42,7 @@ function Login(props){
             </section>
             <div className='login-container'>
                 <div className='box'>
-                    <h1><i class="fas fa-record-vinyl logo"></i>Vinyl Navigator</h1>
+                    <h1><i className="fas fa-record-vinyl logo"></i>Vinyl Navigator</h1>
                     <form className='login' onSubmit={submitHandler}>
                         <input name='username' 
                                type='text'
