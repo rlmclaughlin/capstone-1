@@ -1,0 +1,181 @@
+ [
+    {
+        "id": 0,
+        "product_name": "Sally Go Forth",
+        "product_description": "Rainbow Phfolly",
+        "serial_number": 34524523453,
+        "manufacturer": "Sundazed Records",
+        "category": "vinyl",
+        "quantity": 2,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/A1nOYxxsyCL._SL1500_.jpg",
+        "price": 19.99
+    },
+    {
+        "id": 1,
+        "product_name": "July",
+        "product_description": "July",
+        "serial_number": 24234356545,
+        "manufacturer": "Beat Records",
+        "category": "vinyl",
+        "quantity": 1,
+        "product_image": "https://e.snmc.io/i/600/w/7f0f7f8c0964405e0466bcb5bd5defca/8700456",
+        "price": 14.99
+    },
+    {
+        "id": 2,
+        "product_name": "Saga of Simon Simopath",
+        "product_description": "Nirvana",
+        "serial_number": 2056435644,
+        "manufacturer": "Apple Records",
+        "category": "vinyl",
+        "quantity": 5,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/517vXXFQm5L._SY355_.jpg",
+        "price": 24.95
+
+
+    },
+    {
+        "id": 3,
+        "product_name": "Tiffany Shade [self titled]",
+        "product_description": "Tiffany Shade",
+        "serial_number": 548659479485,
+        "manufacturer": "Sundazed",
+        "category": "vinyl",
+        "quantity": 6,
+        "product_image": "https://e.snmc.io/i/600/w/1882c5b9df0cd1481ea9b35b68849b56/2168509",
+        "price": 19.99
+    },
+    {
+        "id": 4,
+        "product_name": "CQ",
+        "product_description": "The Outsiders",
+        "serial_number": 123483434,
+        "manufacturer": "Electric Records",
+        "category": "vinyl",
+        "quantity": 2,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/712cnvLri8L._SX355_.jpg",
+        "price": 9.99
+    },
+    {
+        "id": 5,
+        "product_name": "Behold and See",
+        "product_description": "The Ultimate Spinach",
+        "serial_number": 1243534348,
+        "manufacturer": "Golden Records",
+        "category": "vinyl",
+        "quantity": 4,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/51RMHF2FdtL._SY355_.jpg",
+        "price": 16.99
+    },
+    {
+        "id": 6,
+        "product_name": "Piper at the Gates of Dawn",
+        "product_description": "Pink Floyd",
+        "serial_number": 12334548434,
+        "manufacturer": "Capitol Records",
+        "category": "vinyl",
+        "quantity": 5,
+        "product_image": "https://upload.wikimedia.org/wikipedia/en/3/3c/PinkFloyd-album-piperatthegatesofdawn_300.jpg",
+        "price": 9.99
+    },
+    {
+        "id": 7,
+        "product_name": "Tomorrow",
+        "product_description": "Tomorrow",
+        "serial_number": 543579853558,
+        "manufacturer": "EMI",
+        "category": "vinyl",
+        "quantity": 7,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/61umS1GrS1L.jpg",
+        "price": 19.99
+    },
+    {
+        "id": 8,
+        "product_name": "Tangerine Dream",
+        "product_description": "Kaleidoscope",
+        "serial_number": 12456675348,
+        "manufacturer": "Other Records",
+        "category": "vinyl",
+        "quantity": 8,
+        "product_image": "https://upload.wikimedia.org/wikipedia/en/e/e3/KaleidoscopeTangerineDream.jpg",
+        "price": 14.99
+    },
+    {
+        "id": 9,
+        "product_name": "Blompsterpolsten",
+        "product_description": "The Young Flowers",
+        "serial_number": 123355433248,
+        "manufacturer": "Elite Records",
+        "category": "vinyl",
+        "quantity": 1,
+        "product_image": "https://www.rockadrome.com/store/images/detailed/15/youngflowersrelp500.jpg",
+        "price": 39.99
+    },
+    {
+        "id": 10,
+        "product_name": "Psychedelic Sounds...",
+        "product_description": "13th Floor Elevators",
+        "serial_number": 1234567566734,
+        "manufacturer": "Sundazed Records",
+        "category": "vinyl",
+        "quantity": 2,
+        "product_image": "https://upload.wikimedia.org/wikipedia/en/a/ab/13th_Floor_Elevators-The_Psychedelic_Sounds_of_the_13th_Floor_Elevators_%28album_cover%29.jpg",
+        "price": 22.49
+    },
+    {
+        "id": 11,
+        "product_name": "Look Where I Am",
+        "product_description": "Erik",
+        "serial_number": 1238756546,
+        "manufacturer": "Vanguard",
+        "category": "vinyl",
+        "quantity": 3,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/51CmaBUOzDL._SX355_.jpg",
+        "price": 14.99
+    },
+    {
+        "id": 12,
+        "product_name": "Forever Changes",
+        "product_description": "Love",
+        "serial_number": 12334563464,
+        "manufacturer": "Elektra",
+        "category": "vinyl",
+        "quantity": 2,
+        "product_image": "https://upload.wikimedia.org/wikipedia/en/c/c8/Love_-_forever_changes.jpg",
+        "price": 24.95
+    },
+    {
+        "id": 13,
+        "product_name": "Gandalf",
+        "product_description": "Gandalf",
+        "serial_number": 12344566,
+        "manufacturer": "Capitol",
+        "category": "vinyl",
+        "quantity": 8,
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuesmbrFHF8Rua-O1v3U8rQ2-1w4Ycio8vCg&usqp=CAU",
+        "price": 44.99
+    },
+    {
+        "id": 14,
+        "product_name": "Psychedelic Lollipop",
+        "product_description": "The Blues Magoos",
+        "serial_number": 123987654,
+        "manufacturer": "ABC Records",
+        "category": "vinyl",
+        "quantity": 4,
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgh7d5X9Jc-B8TOceL7xwA5fmPqAE0MjWvZg&usqp=CAU",
+        "price": 13.99
+    },
+    {
+        "id": 15,
+        "product_name": "Axis Bold As Love",
+        "product_description": "Jimi Hendrix",
+        "serial_number": 1235654433346,
+        "manufacturer": "Capitol",
+        "category": "vinyl",
+        "quantity": 6,
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/81f20JroW9L._SL1140_.jpg",
+        "price": 14.99
+    }
+]
+

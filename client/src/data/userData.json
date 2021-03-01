@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "username": "@admin",
+        "email": "admin@yahoo.com",
+        "password": "admin",
+        "loggedIn": false
+    },
+    {
+        "id": 2,
+        "username": "@employee",
+        "email": "employee@yahoo.com",
+        "password": "employee",
+        "loggedIn": false
+    }
+
+]

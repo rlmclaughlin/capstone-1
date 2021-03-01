@@ -1,24 +1,75 @@
-import logo from './logo.svg';
+import React, {useState} from 'react'
+import Nav from './components/nav/nav'
+import InventoryCards from './components/inventory/inventoryCards'
+import Login from './components/forms/login'
+import SignOut from './components/forms/signOut'
+import Landing from './components/landing/landing'
+import VinylCards from './components/vinyl/vinylCards'
+import ShoppingCart from './components/shoppingCart/shoppingCart'
+import SearchResults from './components/searchResults/searchResults'
+import {Route} from 'react-router-dom'
+import ViewCard from './components/viewCard/viewCard'
+import AdminView from './components/adminView/adminView.jsx'
+import OrderConfirmation from './components/orderConfirmation/orderConfirmation.jsx'
+
 import './App.css';
 
+const userData = require('./data/userData.json')
+const inventoryData = require('./data/inventoryData.json')
+
 function App() {
+    const [users, setUsers] = useState(userData)
+    const [inventory, setInventory] = useState(inventoryData)
+    const [cart, setCart] = useState([])
+    const [match, setMatch] = useState([])
+    const [loggedIn, setLoggedIn] = useState(false)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          <Nav inventory={inventory} setMatch={setMatch} match={match}/>
+    
+          <Route exact path='/' render={props => (
+            <Landing {...props} />
+          )}/>
+
+          <Route path='/searchResults' render={props => (
+            <SearchResults {...props} match={match} setMatch={setMatch} inventory={inventory} setInventory={setInventory}/>
+          )}/>
+          
+          <Route path='/inventory' render={props => (
+            <InventoryCards {...props} setCart={setCart}  inventory={inventory}/>
+          )}/>          
+
+          <Route path='/adminView' render={props => (
+              <AdminView {...props} inventory={inventory} setInventory={setInventory}/> 
+          )}/>
+
+          <Route path='/vinyl' render={props => (
+            <VinylCards {...props} setCart={setCart} cart={cart} setInventory={setInventory} inventory={inventory}/>
+          )}/>
+
+          <Route path='/cart' render={props => (
+              <ShoppingCart {...props}  cart={cart} setCart={setCart} inventory={inventory} setInventory={setInventory}/>
+          )}/>
+
+          <Route path='/viewCard/:id' render={props => (
+              <ViewCard {...props} inventory={inventory} setInventory={setInventory} cart={cart} setCart={setCart}/> 
+          )}/>
+
+          <Route path='/orderConfirmation' render={props => (
+              <OrderConfirmation {...props} setCart={setCart}/> 
+          )}/>
+
+          <Route path='/login' render={props => (
+            <Login {...props}  setUsers={setUsers} setLoggedIn={setLoggedIn} loggedIn={loggedIn} users={users}/>
+          )}/>       
+
+          <Route path='/signOut' render={props => (
+            <SignOut {...props} />
+          )}/>
+
+      </div>
   );
 }
 
