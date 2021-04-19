@@ -5,7 +5,7 @@ import '../../styles/vinyl/vinylCards.css'
 
 function VinylCards(props){
 
-    let albumList = props.inventory.filter(item => item.category == 'vinyl')
+   // let albumList = props.inventory.filter(item => item.category == 'vinyl')
 
     return(
         <section className='inventory-cards-container'>
@@ -16,7 +16,7 @@ function VinylCards(props){
             </section>
             <section className='vinyl-cards'>
                 {
-                    albumList.map((item, index) => (
+                    props.inventory.map((item, index) => (
                         <VinylCard key={index} cart={props.cart} inventory={props.inventory} setInventory={props.setInventory} setCart={props.setCart} vinyl={item} />
                     ))
                 }

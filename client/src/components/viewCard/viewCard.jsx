@@ -1,16 +1,24 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import '../../styles/viewCard/viewCard.css'
 
 function ViewCard(props){
-    const vinyl = props.inventory[props.match.params.id]
+    const [vinyl, setVinyl] = useState([]);
     const[inCart, setInCart] = useState(false)
 
     useEffect(() => {
+        axios.get(`http://localhost:9191/products/${props.match.params.id}`)
+            .then(response => {
+                setVinyl(response.data)
+            })
+            .catch(error => {
+                console.log("there was an error gathering your data", error); 
+            })
+
         props.cart.map(item => 
             item.id === vinyl.id && item.inCart === true ? setInCart(true) : false
         )
     }, [])
-
 
     const addHandler = (e) => { 
         e.preventDefault()
@@ -37,6 +45,10 @@ function ViewCard(props){
         }
     }
 
+    if(!props){
+       return "Currently gathering your album"
+    }
+
     return(
         <section className='inventory-cards-container'>
             <section className='header header-background'>
@@ -49,7 +61,7 @@ function ViewCard(props){
                 <hr className='view-card-hr' />
                 <div className='vinyl-product-info'> 
                     <section >
-                        <h2>{vinyl.product_name}</h2>
+                        <h2>{vinyl.name}</h2>
                         <h3>{vinyl.product_description}</h3>
                         <h3>Selling at: ${vinyl.price}</h3>
                         <h5>Label: {vinyl.manufacturer}</h5>
