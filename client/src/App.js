@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Nav from './components/nav/nav'
 import InventoryCards from './components/inventory/inventoryCards'
 import Login from './components/forms/login'
+import Register from './components/forms/register'
 import SignOut from './components/forms/signOut'
 import Landing from './components/landing/landing'
 import VinylCards from './components/vinyl/vinylCards'
@@ -19,7 +20,6 @@ const inventoryData = require('./data/inventoryData.json')
 
 function App() {
     const [users, setUsers] = useState(userData)
-    //const [inventory, setInventory] = useState(inventoryData)
     const [cart, setCart] = useState([])
     const [match, setMatch] = useState([])
     const [loggedIn, setLoggedIn] = useState(false)
@@ -74,6 +74,8 @@ function App() {
           <Route path='/orderConfirmation' render={props => (
               <OrderConfirmation {...props} setCart={setCart}/> 
           )}/>
+
+          <Route path='/register' component={Register}/>   
 
           <Route path='/login' render={props => (
             <Login {...props}  setUsers={setUsers} setLoggedIn={setLoggedIn} loggedIn={loggedIn} users={users}/>

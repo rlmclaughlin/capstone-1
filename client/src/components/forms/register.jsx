@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import axios from 'axios'
 import '../../styles/forms/login.css'
-import axios from 'axios';
 
-function Login(props){
-    const [user, setUser] = useState({username: '', email: '', password: ''})
+function Register(props){
+    const [user, setUser] = useState({username: '', password: ''})
 
     const changeHandler = (e) => {
         e.preventDefault()
@@ -15,30 +14,24 @@ function Login(props){
         ))
     }
 
-    const submitHandler = (e) => {
-        e.preventDefault() 
+    const submitHandler = (event) => {
+        event.preventDefault() 
 
         const newPost = {
             username: user.username,
             password: user.password
         }
 
-        axios.post("http://www.localhost:9191/users/login", newPost)
+        axios.post("http://www.localhost:9191/users/register", newPost)
             .then( response => {
                 console.log(response)
-                localStorage.setItem('username', user.username)
-                props.setLoggedIn(true)
                 setUser({
                     username: '',
                     password: ''
                 })
-                document.querySelector('span.error-handler').setAttribute('style', 'display: none')  
-                props.history.push('/')
+                props.history.push('/login')
             })
-            .catch(error => { 
-                document.querySelector('span.error-handler').setAttribute('style', 'display: flex')
-                document.querySelector('span.error-handler').textContent = "Incorrect Information"
-                console.log('There was an error registering your content')})
+            .catch(error => { console.log('There was an error registering your content')})
     }
 
     return(
@@ -67,17 +60,10 @@ function Login(props){
                         <button className='btn'type='submit'>Submit</button>
                         <span className='error-handler' ></span>
                     </form>
-                    <p style={{width: "100%", display: "flex", justifyContent: "center", color: "black", alignItems: "center"}}>Not a member? &nbsp; &nbsp; <Link to="register" > Register Here</Link></p>
                 </div>    
             </div>
         </section>
     )
 }
 
-export default Login    
-
-
-
-
-
-  
+export default Register  

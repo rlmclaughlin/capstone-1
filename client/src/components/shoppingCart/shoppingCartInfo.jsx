@@ -75,7 +75,7 @@ function ShoppingCartInfo(props){
                 <img className='product-image' src={props.item.image}/>
                 <section>
                     <div>
-                        <h4>{props.item.product_name}</h4>  
+                        <h4>{props.item.name}</h4>  
                         <h5>{props.item.description}</h5>
                         <p>UPC:{props.item.serialNumber}</p>
                     </div>
